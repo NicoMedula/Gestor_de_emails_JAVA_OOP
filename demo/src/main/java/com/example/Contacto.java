@@ -1,13 +1,12 @@
 package com.example;
 
-/**
- * Hello world!
- *
- */
-public class Contacto 
-{
+
+public class Contacto extends Usuario {
+    
+    public Contacto(String nombre, String email){
+        
+    }
     
 }
 
-/* 12321412 */
-//wewweweweewe
+
