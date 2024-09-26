@@ -34,6 +34,7 @@ public class Contacto extends Usuario {
     public String getEmail(){
         return email;
     }
+    
 }
 
 

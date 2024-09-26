@@ -46,5 +46,34 @@ public class ContactoTest
     
         assertEquals(destinatariosEsperados, correo.getPara());
     }
+
+    @Test
+    public void enviar_correo_test() {
+        /* contactos */
+        Contacto remitente = new Contacto("Uriel Sabugo", "uriel@gmail.com");
+        Contacto destinatario = new Contacto("Nico Medula", "nico@gmail.com");
+
+        /* correo */
+        Correo correo = new Correo("probando", "capo.", remitente);
+
+        /* agregar destinatario y correo */
+        correo.agregarDestinatario(destinatario);
+        correo.enviarCorreo(true);
+
+        /* verificacion que el correo fue enviado */
+        assertTrue(correo.isEnviado(true));
+
+        /* verificacion qque el destinatario se agrego */
+        assertEquals(1, correo.getPara().size());
+        assertEquals(destinatario, correo.getPara().get(0));
+
+        /* verificacion que el correo se agrego a la bandeja de salida */
+        assertEquals(1, BandejaDeSalida.getCorreosEnviados().size());
+        assertEquals(correo, BandejaDeSalida.getCorreosEnviados().get(0));
+        
+    }
+
     
+
+
 }
