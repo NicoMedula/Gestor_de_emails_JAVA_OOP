@@ -87,6 +87,28 @@ public class ContactoTest
         u1.crearCorreo(correo1.getAsunto(), correo1.getContenido(), correo1.getRemitente(), correo1.getDestinatarios());
         
         assertEquals(1, correo1.getDestinatarios().size());
+
+    }
+
+    @Test
+    public void crear_correo_electronico_con_10_destinatario_Test(){
+        
+        Correo correo = new Correo();
+
+
+        for(int i=0; i<10; i++){
+
+            Contacto c1 = new Contacto("Contacto " + i, "contacto" + i + "@example.com");
+
+            correo.setDestinatario(c1);
+            correo.setAsunto("Asunto"+i);
+            correo.setContenido("Contenido"+i);
+            correo.setRemitente(c1);
+
+        }
+        assertEquals(10, correo.getDestinatarios().size());
+        
+        assertTrue(correo.getDestinatarios().containsAll(correo.getDestinatarios()));
         
     }
 
