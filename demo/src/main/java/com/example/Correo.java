@@ -9,6 +9,12 @@ public class Correo {
 
     private ArrayList<Contacto>destinatario = new ArrayList();
 
+    public void setDestinatario(Contacto contacto){
+        destinatario.add(contacto);
+    }
 
-
+    public ArrayList<Contacto> getDestinatarios(){
+        return destinatario;
+    }
+    
 }
