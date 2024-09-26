@@ -74,7 +74,7 @@ public class ContactoTest
     public void crear_correo_electronico_con_las_propiedades_Test(){
         Contacto c1 = new Contacto("Nico", "nicolas@hotmail.com");
         Contacto c2 = new Contacto("Nico2", "nicolas2@hotmail.com");
-        BandejaDeSalida b1 = new BandejaDeSalida();
+        
 
 
         Correo correo1 = new Correo();
@@ -143,7 +143,7 @@ public class ContactoTest
 
         Contacto c1 = new Contacto("Nico", "nicolas@hotmail.com");
         Contacto c2 = new Contacto("Nico2", "nicolas2@hotmail.com");
-        BandejaDeSalida b1 = new BandejaDeSalida();
+        
 
         Correo correo1 = new Correo();
         correo1.setAsunto("Probando si funciona");
