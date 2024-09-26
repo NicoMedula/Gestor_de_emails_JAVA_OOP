@@ -1,8 +1,7 @@
 package com.example;
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 import org.junit.Test;
 
@@ -35,7 +34,11 @@ public class ContactoTest
         Contacto destinatario1 = new Contacto("Nico Medula", "nico@gmail.com");
         Contacto destinatario2 = new Contacto("Jose Fernandez", "josef@gmail.com");
     
-        Correo correo = new Correo("probando", "capo.", remitente);
+        Correo correo = new Correo();
+        correo.setAsunto("Probando");
+        correo.setRemitente(remitente);
+        correo.setContenido("prueba");
+
     
         correo.agregarDestinatario(destinatario1);
         correo.agregarDestinatario(destinatario2);
@@ -121,7 +124,7 @@ public class ContactoTest
         
 
 
-        Correo correo1 = new Correo(null, null, null);
+        Correo correo1 = new Correo();
         correo1.setAsunto("Probando si funciona");
         correo1.setContenido("Este es un mensaje de prueba");
         correo1.setDestinatario(c1);
@@ -138,7 +141,7 @@ public class ContactoTest
     @Test
     public void crear_correo_electronico_con_10_destinatario_Test(){
         
-        Correo correo = new Correo(null, null, null);
+        Correo correo = new Correo();
 
         Contacto c2 = new Contacto("Uriel","urielsabugo@gmail.com");
 
@@ -161,7 +164,7 @@ public class ContactoTest
 
     @Test
     public void crear_correo_electronico_con_100_destinatarios_Test(){
-        Correo correo = new Correo(null, null, null);
+        Correo correo = new Correo();
 
         Contacto c2 = new Contacto("Uriel","urielsabugo@gmail.com");
 
@@ -189,7 +192,7 @@ public class ContactoTest
         Contacto c2 = new Contacto("Nico2", "nicolas2@hotmail.com");
         
 
-        Correo correo1 = new Correo(null,null, null);
+        Correo correo1 = new Correo();
         correo1.setAsunto("Probando si funciona");
         correo1.setContenido("Este es un mensaje de prueba");
         correo1.setDestinatario(c1);
