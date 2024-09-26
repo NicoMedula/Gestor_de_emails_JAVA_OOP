@@ -4,17 +4,13 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
+
 public class ContactoTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void el_usuario_puede_crear_un_mail_Test(){
+        Usuario u1 = new Usuario();
+        u1.crearCorreo(null, null, null, null);
     }
+    
 }
