@@ -2,8 +2,7 @@ package com.example;
 import java.util.ArrayList;
 
 public class Usuario {
-    private String nombre;
-    private String email;
+    
     private BandejaDeSalida bandejaEnviado;
 
     public void crearCorreo(String asunto, 
