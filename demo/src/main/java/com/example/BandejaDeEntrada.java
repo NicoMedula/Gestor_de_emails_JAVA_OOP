@@ -6,8 +6,8 @@ public class BandejaDeEntrada {
 
     private ArrayList<Correo> correosRecibidos;
 
-    public void agregarCorreoEnviado(Correo correo){
-        
+    public void agregarCorreoRecibido(Correo correo){
+        correosRecibidos.add(correo);
     }
 
 

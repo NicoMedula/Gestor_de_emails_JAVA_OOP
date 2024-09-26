@@ -7,8 +7,12 @@ public class BandejaDeSalida {
 
 
 
-    public void agregarCorreoEnviado(Correo correo){
+    public void setCorreoEnviado(Correo correo){
         correosEnviados.add(correo);
+    }
+
+    public ArrayList<Correo> getCorreosEnviados(){
+        return correosEnviados;
     }
 
 

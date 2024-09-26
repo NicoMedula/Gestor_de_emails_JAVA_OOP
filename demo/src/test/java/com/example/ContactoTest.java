@@ -74,6 +74,7 @@ public class ContactoTest
     public void crear_correo_electronico_con_las_propiedades_Test(){
         Contacto c1 = new Contacto("Nico", "nicolas@hotmail.com");
         Contacto c2 = new Contacto("Nico2", "nicolas2@hotmail.com");
+        BandejaDeSalida b1 = new BandejaDeSalida();
 
 
         Correo correo1 = new Correo();
@@ -84,7 +85,7 @@ public class ContactoTest
 
         Usuario u1 = new Usuario();
 
-        u1.crearCorreo(correo1.getAsunto(), correo1.getContenido(), correo1.getRemitente(), correo1.getDestinatarios());
+        u1.setCorreo(correo1.getAsunto(), correo1.getContenido(), correo1.getRemitente(), correo1.getDestinatarios());
         
         assertEquals(1, correo1.getDestinatarios().size());
 
@@ -137,6 +138,28 @@ public class ContactoTest
 
     }
 
+    @Test 
+    public void verificar_que_el_mail_se_envia_y_se_almacena_en_bandeja_de_salida_Test(){
+
+        Contacto c1 = new Contacto("Nico", "nicolas@hotmail.com");
+        Contacto c2 = new Contacto("Nico2", "nicolas2@hotmail.com");
+        BandejaDeSalida b1 = new BandejaDeSalida();
+
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Probando si funciona");
+        correo1.setContenido("Este es un mensaje de prueba");
+        correo1.setDestinatario(c1);
+        correo1.setRemitente(c2);
+
+        Usuario u1 = new Usuario();
+
+        u1.setCorreo(correo1.getAsunto(), correo1.getContenido(), correo1.getRemitente(), correo1.getDestinatarios());
+
+        u1.enviarCorreo(correo1);
+        
+        assertEquals(1, u1.getBandejaDeSalida().size());
+        
+    }
 
     
 }
