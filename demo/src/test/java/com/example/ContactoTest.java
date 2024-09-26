@@ -29,5 +29,32 @@ public class ContactoTest
     
 
     }
+
+    @Test
+    public void crear_10_contactos_validados_correctamente_Test(){
+        for(int i=0; i<10; i++){
+            Contacto c1 = new Contacto("Contacto " + i, "contacto" + i + "@example.com");
+            assertEquals("contacto" + i + "@example.com", c1.getEmail());
+        }
+    } 
+
+    @Test
+    public void crear_100_contactos_validos_Test(){
+
+        for(int i=0; i<100; i++){
+            Contacto c1 = new Contacto("Contacto " + i, "contacto" + i + "@example.com");
+            assertEquals("contacto" + i + "@example.com", c1.getEmail());
+        }
+    }
+
+    @Test public void crear_1000_contactos_validos_Test(){
+
+        for(int i=0; i<1000; i++){
+            Contacto c1 = new Contacto("Contacto " + i, "contacto" + i + "@example.com");
+            assertEquals("contacto" + i + "@example.com", c1.getEmail());
+        }
+
+    }
+
     
 }
