@@ -5,26 +5,19 @@ import java.util.List;
 public class BandejaDeSalida {
     private static List<Correo> correosEnviados = new ArrayList<>();
 
-<<<<<<< HEAD
+    /* agrega el correo enviado */
     public static void agregarCorreo(Correo correo) {
         correosEnviados.add(correo);
     }
 
+    /* retorna la lista de correos enviados */
     public static List<Correo> getCorreosEnviados() {
         return correosEnviados;
     }
-=======
 
-
-    public void setCorreoEnviado(Correo correo){
-        correosEnviados.add(correo);
+    /* setea los correos enviados*/
+    public void setCorreoEnviado(Correo correo) {
+        this.correosEnviados.add(correo);
     }
-
-    public ArrayList<Correo> getCorreosEnviados(){
-        return correosEnviados;
-    }
-
-
->>>>>>> d7f5900906ee10f7e10754be68660a1d10041376
 }
 

@@ -1,5 +1,6 @@
 package com.example;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Usuario {
     
@@ -19,7 +20,7 @@ public class Usuario {
         bandejaEnviado.setCorreoEnviado(correo);
     }
 
-    public ArrayList<Correo> getBandejaDeSalida(){
-        return bandejaEnviado.getCorreosEnviados();
+    public List<Correo> getBandejaDeSalida(){
+        return BandejaDeSalida.getCorreosEnviados();
     }
 }

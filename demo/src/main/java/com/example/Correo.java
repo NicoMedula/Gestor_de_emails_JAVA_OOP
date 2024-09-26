@@ -7,6 +7,7 @@ public class Correo {
     private String asunto;
     private String contenido;
     private Contacto remitente;
+    private ArrayList<Contacto> destinatario = new ArrayList<>();
     private List<Contacto>para;
     private boolean enviado;
 
@@ -18,16 +19,16 @@ public class Correo {
     this.para = para;
     }
     
-    public String getAsunto(){
+    public String getAsunto(String asunto){
         return asunto;
     }
 
-<<<<<<< HEAD
-    public String getContenido(){
+
+    public String getContenido(String contenido){
         return contenido;
     }
 
-    public Contacto getRemitente(){
+    public Contacto getRemitente(Contacto remitente){
         return remitente;
     }
 
@@ -47,6 +48,14 @@ public class Correo {
         para.add(destinatario);
     }
 
+    public boolean isEnviado() {
+        return enviado;
+    }
+
+    public void setEnviado(boolean enviado) {
+        this.enviado = enviado;
+    }
+
     public void enviarCorreo(boolean enviado) {
         if (enviado) {
             this.enviado = true;
@@ -54,14 +63,14 @@ public class Correo {
         } else {
             this.enviado = false;
         }
-=======
+    }
+
     public void setDestinatario(Contacto contacto){
         destinatario.add(contacto);
     }
 
     public ArrayList<Contacto> getDestinatarios(){
-        return destinatario;
->>>>>>> d7f5900906ee10f7e10754be68660a1d10041376
+        return destinatario; // Devuelve la lista de destinatarios
     }
 
     public void setContenido(String contenido){

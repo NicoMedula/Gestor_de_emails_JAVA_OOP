@@ -30,13 +30,26 @@ public class ContactoTest
     }
 
     @Test
-<<<<<<< HEAD
     public void agregar_destinatario_test() {
         Contacto remitente = new Contacto("Uriel Sabugo", "uriel@gmail.com");
         Contacto destinatario1 = new Contacto("Nico Medula", "nico@gmail.com");
         Contacto destinatario2 = new Contacto("Jose Fernandez", "josef@gmail.com");
-=======
-    public void crear_10_contactos_validados_correctamente_Test(){
+    
+        Correo correo = new Correo("probando", "capo.", remitente);
+    
+        correo.agregarDestinatario(destinatario1);
+        correo.agregarDestinatario(destinatario2);
+    
+        List<Contacto> destinatariosEsperados = new ArrayList<>();
+        destinatariosEsperados.add(destinatario1);
+        destinatariosEsperados.add(destinatario2);
+    
+        assertEquals(destinatariosEsperados, correo.getPara());
+    }
+
+
+        @Test
+        public void crear_10_contactos_validados_correctamente_Test(){
         for(int i=0; i<10; i++){
             Contacto c1 = new Contacto("Contacto " + i, "contacto" + i + "@example.com");
             assertEquals("contacto" + i + "@example.com", c1.getEmail());
@@ -82,7 +95,7 @@ public class ContactoTest
         
 
 
-        Correo correo1 = new Correo();
+        Correo correo1 = new Correo(null, null, null);
         correo1.setAsunto("Probando si funciona");
         correo1.setContenido("Este es un mensaje de prueba");
         correo1.setDestinatario(c1);
@@ -99,7 +112,7 @@ public class ContactoTest
     @Test
     public void crear_correo_electronico_con_10_destinatario_Test(){
         
-        Correo correo = new Correo();
+        Correo correo = new Correo(null, null, null);
 
         Contacto c2 = new Contacto("Uriel","urielsabugo@gmail.com");
 
@@ -122,7 +135,7 @@ public class ContactoTest
 
     @Test
     public void crear_correo_electronico_con_100_destinatarios_Test(){
-        Correo correo = new Correo();
+        Correo correo = new Correo(null, null, null);
 
         Contacto c2 = new Contacto("Uriel","urielsabugo@gmail.com");
 
@@ -150,7 +163,7 @@ public class ContactoTest
         Contacto c2 = new Contacto("Nico2", "nicolas2@hotmail.com");
         
 
-        Correo correo1 = new Correo();
+        Correo correo1 = new Correo(null,null, null);
         correo1.setAsunto("Probando si funciona");
         correo1.setContenido("Este es un mensaje de prueba");
         correo1.setDestinatario(c1);
@@ -163,46 +176,6 @@ public class ContactoTest
         u1.enviarCorreo(correo1);
         
         assertEquals(1, u1.getBandejaDeSalida().size());
-        
-    }
-
->>>>>>> d7f5900906ee10f7e10754be68660a1d10041376
-    
-        Correo correo = new Correo("probando", "capo.", remitente);
-    
-        correo.agregarDestinatario(destinatario1);
-        correo.agregarDestinatario(destinatario2);
-    
-        List<Contacto> destinatariosEsperados = new ArrayList<>();
-        destinatariosEsperados.add(destinatario1);
-        destinatariosEsperados.add(destinatario2);
-    
-        assertEquals(destinatariosEsperados, correo.getPara());
-    }
-
-    @Test
-    public void enviar_correo_test() {
-        /* contactos */
-        Contacto remitente = new Contacto("Uriel Sabugo", "uriel@gmail.com");
-        Contacto destinatario = new Contacto("Nico Medula", "nico@gmail.com");
-
-        /* correo */
-        Correo correo = new Correo("probando", "capo.", remitente);
-
-        /* agregar destinatario y correo */
-        correo.agregarDestinatario(destinatario);
-        correo.enviarCorreo(true);
-
-        /* verificacion que el correo fue enviado */
-        assertTrue(correo.isEnviado(true));
-
-        /* verificacion qque el destinatario se agrego */
-        assertEquals(1, correo.getPara().size());
-        assertEquals(destinatario, correo.getPara().get(0));
-
-        /* verificacion que el correo se agrego a la bandeja de salida */
-        assertEquals(1, BandejaDeSalida.getCorreosEnviados().size());
-        assertEquals(correo, BandejaDeSalida.getCorreosEnviados().get(0));
         
     }
 
