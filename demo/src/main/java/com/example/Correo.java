@@ -9,25 +9,12 @@ public class Correo {
     private Contacto remitente;
     private ArrayList<Contacto> destinatario = new ArrayList<>();
 
-
-    /* CREACION DE CORREO CON SUS PROPIEDADES */
-    public Correo(String asunto, String contenido, Contacto remitente){
-    this.asunto = asunto;
-    this.contenido = contenido;
-    this.remitente = remitente;
-    }
-    
-
     public void agregarDestinatario(Contacto destinatario){
         // Agrega un nuevo destinatario al correo
         this.destinatario.add(destinatario);
         
     }
     
-    public String getAsunto(String asunto){
-        return asunto;
-    }
-
 
     public String getContenido(String contenido){
         return contenido;
@@ -59,7 +46,6 @@ public class Correo {
     public String getAsunto(){
         return asunto;
     }
-
     
     public void setRemitente(Contacto remitente){
         this.remitente = remitente;
