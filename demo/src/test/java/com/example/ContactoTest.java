@@ -1,9 +1,13 @@
 package com.example;
-import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+
 
 import java.util.List;
 
-import org.junit.Test;
+
 
 
 public class ContactoTest 

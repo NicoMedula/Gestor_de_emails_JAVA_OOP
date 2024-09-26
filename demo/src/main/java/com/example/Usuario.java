@@ -1,5 +1,5 @@
 package com.example;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
@@ -10,11 +10,15 @@ public class Usuario {
         this.bandejaEnviado = new BandejaDeSalida();
     }
 
+    public void setCorreo(String asunto, 
+                                String contenido,               
+                                    Contacto remitente, ArrayList<Contacto>destinatarios){
 
+    }
 
     public void enviarCorreo(Correo correo){
         //Agrega el correo a la lista de correos enviados del remitente
-        bandejaEnviado.setCorreoEnviado(correo);
+        bandejaEnviado.agregarCorreo(correo);
 
         //Agrega los correos a la bandeja de entrada de los destinatarios
         for (Contacto destinatario : correo.getDestinatarios()) {
@@ -24,6 +28,6 @@ public class Usuario {
     }
 
     public List<Correo> getBandejaDeSalida(){
-        return BandejaDeSalida.getCorreosEnviados();
+        return bandejaEnviado.getCorreosEnviados();
     }
 }
