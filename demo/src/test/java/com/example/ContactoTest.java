@@ -1,6 +1,8 @@
 package com.example;
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 
 
@@ -205,6 +207,95 @@ public class ContactoTest
         assertEquals(1, u1.getBandejaDeSalida().size());
         
     }
+
+    @Test
+    public void varios_destinatarios_reciben_el_correo_en_bandeja_de_entrada_Test() {
+        // Crear remitente
+        Contacto remitente = new Contacto("Remitente", "remitente@example.com");
+
+        // Crear destinatarios
+        Contacto destinatario1 = new Contacto("Destinatario 1", "destinatario1@example.com");
+        Contacto destinatario2 = new Contacto("Destinatario 2", "destinatario2@example.com");
+        Contacto destinatario3 = new Contacto("Destinatario 3", "destinatario3@example.com");
+
+        // Crear correo
+        Correo correo = new Correo();
+        correo.setAsunto("Asunto de prueba");
+        correo.setContenido("Contenido de prueba");
+        correo.setRemitente(remitente);
+
+        // Agregar destinatarios al correo
+        correo.agregarDestinatario(destinatario1);
+        correo.agregarDestinatario(destinatario2);
+        correo.agregarDestinatario(destinatario3);
+
+        // Enviar correo
+        Usuario usuarioRemitente = new Usuario();
+        usuarioRemitente.enviarCorreo(correo);
+
+        // Verificar que el correo esté en la bandeja de salida del remitente
+        List<Correo> correosEnviados = usuarioRemitente.getBandejaDeSalida();
+        assertEquals(1, correosEnviados.size());
+        assertEquals(correo, correosEnviados.get(0));
+
+        // Verificar que cada destinatario haya recibido el correo en su bandeja de entrada
+        assertEquals(1, destinatario1.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(correo, destinatario1.getBandejaDeEntrada().getCorreosRecibidos().get(0));
+
+        assertEquals(1, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(correo, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().get(0));
+
+        assertEquals(1, destinatario3.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(correo, destinatario3.getBandejaDeEntrada().getCorreosRecibidos().get(0));
+    }
+
+    @Test
+    public void enviar_mas_de_un_correo_y_que_se_almacene_bandeja_de_entrada_del_destinatario_Test() {
+        // Crear remitente
+        Contacto remitente = new Contacto("Remitente", "remitente@example.com");
+
+        // Crear destinatarios
+        Contacto destinatario1 = new Contacto("Destinatario 1", "destinatario1@example.com");
+        Contacto destinatario2 = new Contacto("Destinatario 2", "destinatario2@example.com");
+
+        // Crear primer correo
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Asunto 1");
+        correo1.setContenido("Contenido del primer correo");
+        correo1.setRemitente(remitente);
+        correo1.agregarDestinatario(destinatario1);
+        correo1.agregarDestinatario(destinatario2);
+
+        // Crear segundo correo
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Asunto 2");
+        correo2.setContenido("Contenido del segundo correo");
+        correo2.setRemitente(remitente);
+        correo2.agregarDestinatario(destinatario1);
+        correo2.agregarDestinatario(destinatario2);
+
+        // Enviar correos
+        Usuario usuarioRemitente = new Usuario();
+        usuarioRemitente.enviarCorreo(correo1);
+        usuarioRemitente.enviarCorreo(correo2);
+
+        // Verificar que ambos correos estén en la bandeja de salida del remitente
+        List<Correo> correosEnviados = usuarioRemitente.getBandejaDeSalida();
+        assertEquals(2, correosEnviados.size());
+        assertEquals(correo1, correosEnviados.get(0));
+        assertEquals(correo2, correosEnviados.get(1));
+
+        // Verificar que los destinatarios hayan recibido ambos correos en su bandeja de entrada
+        assertEquals(2, destinatario1.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(correo1, destinatario1.getBandejaDeEntrada().getCorreosRecibidos().get(0));
+        assertEquals(correo2, destinatario1.getBandejaDeEntrada().getCorreosRecibidos().get(1));
+
+        assertEquals(2, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(correo1, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().get(0));
+        assertEquals(correo2, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().get(1));
+    }
+
+    
 
 
 }
