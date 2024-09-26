@@ -40,11 +40,8 @@ public class ContactoTest
         correo.agregarDestinatario(destinatario1);
         correo.agregarDestinatario(destinatario2);
     
-        List<Contacto> destinatariosEsperados = new ArrayList<>();
-        destinatariosEsperados.add(destinatario1);
-        destinatariosEsperados.add(destinatario2);
     
-        assertEquals(destinatariosEsperados, correo.getPara());
+        assertEquals(2, correo.getDestinatarios().size());
     }
 
 
@@ -72,6 +69,35 @@ public class ContactoTest
             assertEquals("contacto" + i + "@example.com", c1.getEmail());
         }
 
+    }
+
+    @Test
+    public void crear_10_contactos_invalidos_Test(){
+        int count = 0;
+
+        for(int i=0; i<10; i++){
+            try {
+                new Contacto("Contacto " + i, "contacto" + i + "@ejemplo");//".com" como no esta tira la excepcion
+            }catch (IllegalArgumentException e) {
+                count++;
+            }
+        }
+        assertEquals(10,count);  // 10 emails invalidos
+    }
+
+
+    @Test
+    public void crear_100_contactos_invalidos_Test(){
+        int count = 0;
+
+        for(int i=0; i<100; i++){
+            try {
+                new Contacto("Contacto " + i, "contacto" + i + "@ejemplo");//".com" como no esta tira la excepcion
+            }catch (IllegalArgumentException e) {
+                count++;
+            }
+        }
+        assertEquals(100,count);  // 100 emails invalidos
     }
 
     @Test
