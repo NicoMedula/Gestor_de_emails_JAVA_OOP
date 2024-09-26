@@ -56,5 +56,18 @@ public class ContactoTest
 
     }
 
+    @Test
+    public void crear_1000_contactos_invalidos_Test(){
+        int count = 0;
+        for(int i=0; i<1000; i++){
+            try {
+                new Contacto("Contacto " + i, "contacto" + i + "@ejemplo");
+            }catch (IllegalArgumentException e) {
+                count++;
+            }
+        }
+        assertTrue(count == 1000);  // 1000 emails invalidos
+    }
+
     
 }
