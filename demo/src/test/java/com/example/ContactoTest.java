@@ -67,24 +67,27 @@ public class ContactoTest
                 count++;
             }
         }
-        assert(count == 1000);  // 1000 emails invalidos
+        assertEquals(1000,count);  // 1000 emails invalidos
     }
 
     @Test
     public void crear_correo_electronico_con_las_propiedades_Test(){
+        Contacto c1 = new Contacto("Nico", "nicolas@hotmail.com");
+        Contacto c2 = new Contacto("Nico2", "nicolas2@hotmail.com");
+
 
         Correo correo1 = new Correo();
-
-        Contacto c1 = new Contacto("Nico", "nicolas@hotmail.com");
-        
-
+        correo1.setAsunto("Probando si funciona");
+        correo1.setContenido("Este es un mensaje de prueba");
         correo1.setDestinatario(c1);
+        correo1.setRemitente(c2);
 
         Usuario u1 = new Usuario();
 
-        u1.crearCorreo("Asunto de prueba", "Se esta probando poder crear un correo", c1, correo1.getDestinatarios());
+        u1.crearCorreo(correo1.getAsunto(), correo1.getContenido(), correo1.getRemitente(), correo1.getDestinatarios());
         
         assertEquals(1, correo1.getDestinatarios().size());
+        
     }
 
 
