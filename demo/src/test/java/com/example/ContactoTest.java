@@ -95,21 +95,46 @@ public class ContactoTest
         
         Correo correo = new Correo();
 
+        Contacto c2 = new Contacto("Uriel","urielsabugo@gmail.com");
+
+        correo.setAsunto("Asunto de Prueba");
+        correo.setContenido("Contenido de Prueba");
+        correo.setRemitente(c2);
 
         for(int i=0; i<10; i++){
 
             Contacto c1 = new Contacto("Contacto " + i, "contacto" + i + "@example.com");
-
+            
             correo.setDestinatario(c1);
-            correo.setAsunto("Asunto"+i);
-            correo.setContenido("Contenido"+i);
-            correo.setRemitente(c1);
-
+            
         }
         assertEquals(10, correo.getDestinatarios().size());
         
         assertTrue(correo.getDestinatarios().containsAll(correo.getDestinatarios()));
+
+    }
+
+    @Test
+    public void crear_correo_electronico_con_100_destinatarios_Test(){
+        Correo correo = new Correo();
+
+        Contacto c2 = new Contacto("Uriel","urielsabugo@gmail.com");
+
+        correo.setAsunto("Asunto de Prueba");
+        correo.setContenido("Contenido de Prueba");
+        correo.setRemitente(c2);
+
+        for(int i=0; i<100; i++){
+
+            Contacto c1 = new Contacto("Contacto " + i, "contacto" + i + "@example.com");
+            
+            correo.setDestinatario(c1);
+            
+        }
+        assertEquals(100, correo.getDestinatarios().size());
         
+        assertTrue(correo.getDestinatarios().containsAll(correo.getDestinatarios()));
+
     }
 
 
