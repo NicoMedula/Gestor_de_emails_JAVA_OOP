@@ -130,9 +130,9 @@ public class ContactoTest
         correo1.setDestinatario(c1);
         correo1.setRemitente(c2);
 
-        Usuario u1 = new Usuario();
+       
 
-        u1.setCorreo(correo1.getAsunto(), correo1.getContenido(), correo1.getRemitente(), correo1.getDestinatarios());
+        
         
         assertEquals(1, correo1.getDestinatarios().size());
 
@@ -199,8 +199,6 @@ public class ContactoTest
         correo1.setRemitente(c2);
 
         Usuario u1 = new Usuario();
-
-        u1.setCorreo(correo1.getAsunto(), correo1.getContenido(), correo1.getRemitente(), correo1.getDestinatarios());
 
         u1.enviarCorreo(correo1);
         
