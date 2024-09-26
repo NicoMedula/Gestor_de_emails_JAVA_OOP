@@ -20,6 +20,7 @@ public class Contacto extends Usuario {
         this.email=email;
     }
     
+    //Metodo que valida el email
     private boolean esEmailValido(String email) {
         Pattern pattern = Pattern.compile(EMAIL_REGEX);
         Matcher matcher = pattern.matcher(email);
