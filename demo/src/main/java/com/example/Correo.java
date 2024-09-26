@@ -18,8 +18,6 @@ public class Correo {
         this.destinatario.add(destinatario);
         
     }
-    
-
 
     public String getContenido(String contenido){
         return contenido;
