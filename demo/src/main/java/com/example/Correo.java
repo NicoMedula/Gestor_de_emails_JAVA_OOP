@@ -11,6 +11,11 @@ public class Correo {
 
 
     /* CREACION DE CORREO CON SUS PROPIEDADES */
+    public Correo(String asunto, String contenido, Contacto remitente){
+    this.asunto = asunto;
+    this.contenido = contenido;
+    this.remitente = remitente;
+    }
     
 
     public void agregarDestinatario(Contacto destinatario){
@@ -18,6 +23,11 @@ public class Correo {
         this.destinatario.add(destinatario);
         
     }
+    
+    public String getAsunto(String asunto){
+        return asunto;
+    }
+
 
     public String getContenido(String contenido){
         return contenido;
