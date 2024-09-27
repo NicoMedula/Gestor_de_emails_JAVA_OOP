@@ -16,12 +16,12 @@ public class Correo {
     }
     
 
-    public String getContenido(String contenido){
+    public String getContenido(){
         return contenido;
     }
 
-    public Contacto getRemitente(Contacto remitente){
-        return remitente;
+    public void setContenido(String contenido){
+        this.contenido = contenido;
     }
 
     public void setDestinatario(Contacto contacto){
@@ -30,14 +30,6 @@ public class Correo {
 
     public ArrayList<Contacto> getDestinatarios(){
         return destinatario; // Devuelve la lista de destinatarios
-    }
-
-    public void setContenido(String contenido){
-        this.contenido = contenido;
-    }
-
-    public String getContenido(){
-        return contenido;
     }
 
     public void setAsunto(String asunto){
