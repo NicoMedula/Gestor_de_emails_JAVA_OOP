@@ -34,4 +34,19 @@ public class Filtro {
                          correo.getRemitente().getEmail().equals(remitenteEmail);
     }
 
+    // Filtro complejo: Filtrar por asunto, remitente y contenido
+    public static Predicate<Correo> filtrarPorAsuntoRemitenteYContenido(String keywordAsunto, String remitenteEmail, String keywordContenido) {
+        return correo -> correo.getAsunto().contains(keywordAsunto) &&
+                     correo.getRemitente().getEmail().equals(remitenteEmail) &&
+                     correo.getContenido().contains(keywordContenido);
+    }
+
+    // Filtro complejo: Filtrar por asunto y destinatario
+    public static Predicate<Correo> filtrarPorAsuntoYDestinatario(String keywordAsunto, String destinatarioEmail) {
+        return correo -> correo.getAsunto().contains(keywordAsunto) &&
+                     correo.getDestinatarios().stream().anyMatch(destinatario -> destinatario.getEmail().equals(destinatarioEmail));
+    }
+
+    
+
 }

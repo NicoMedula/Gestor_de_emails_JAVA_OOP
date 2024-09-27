@@ -421,17 +421,43 @@ public class ContactoTest
 
         bandeja.agregarCorreoRecibido(correo1);
         bandeja.agregarCorreoRecibido(correo2);
-
-        // Filtrar por asunto y remitente
-        List<Correo> resultado = bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com"));
     
         // Comprobar que solo se devuelve el correo con el asunto "Oferta importante" del remitente1
-        assertEquals(1, resultado.size());
-        assertEquals(correo1, resultado.get(0));
-
-
+        assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).size());
+        assertEquals(correo1, bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).get(0));
 
     }
 
 
+    @Test
+    public void filtro_complejo_asunto_remitente_y_contenido_Test() {
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+
+        Contacto  remitente1 = new Contacto("remi1","remitente1@ejemplo.com");
+        Contacto remitente2 = new Contacto("desti1","remitente2@ejemplo.com");
+
+        // Crear correos con diferentes contenidos
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Asunto info");
+        correo1.setContenido("Este es un correo importante sobre ofertas");
+        correo1.setRemitente(remitente2);
+
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Asunto 2");
+        correo2.setContenido("Este es un correo informativo");
+        correo2.setRemitente(remitente1);
+
+        Correo correo3 = new Correo();
+        correo3.setAsunto("Asunto info");
+        correo3.setContenido("Este es un correo de notificación importante");
+        correo3.setRemitente(remitente2);
+
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
+        bandeja.agregarCorreoRecibido(correo3);
+
+        assertEquals(2, bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).size());
+
+
+    }
 }
