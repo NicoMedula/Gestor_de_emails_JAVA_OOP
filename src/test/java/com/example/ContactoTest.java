@@ -379,31 +379,59 @@ public class ContactoTest
     public void filtrar_por_destinatario_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
 
-    // Crear contactos destinatarios
-    Contacto destinatario1 = new Contacto("desti1","destinatario1@ejemplo.com");
-    Contacto destinatario2 = new Contacto("desti2","destinatario2@ejemplo.com");
+        // Crear contactos destinatarios
+        Contacto destinatario1 = new Contacto("desti1","destinatario1@ejemplo.com");
+        Contacto destinatario2 = new Contacto("desti2","destinatario2@ejemplo.com");
 
-    // Crear correos con diferentes destinatarios
-    Correo correo1 = new Correo();
-    correo1.setAsunto("Correo 1");
-    correo1.agregarDestinatario(destinatario1);
+        // Crear correos con diferentes destinatarios
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Correo 1");
+        correo1.agregarDestinatario(destinatario1);
 
-    Correo correo2 = new Correo();
-    correo2.setAsunto("Correo 2");
-    correo2.agregarDestinatario(destinatario2);
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Correo 2");
+        correo2.agregarDestinatario(destinatario2);
 
-    bandeja.agregarCorreoRecibido(correo1);
-    bandeja.agregarCorreoRecibido(correo2);
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
    
     
-    // Comprobar que solo se devuelve el correo dirigido a destinatario1
-    assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).size());
-    assertEquals(correo1, bandeja.filtrarCorreos(Filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).get(0));
+        // Comprobar que solo se devuelve el correo dirigido a destinatario1
+        assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).size());
+        assertEquals(correo1, bandeja.filtrarCorreos(Filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).get(0));
 
     }
 
 
+    @Test
+    public void filtro_complejo_asunto_y_remitente_Test() {
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+
+        // Crear remitente
+        Contacto remitente1 = new Contacto("remi1","remitente1@ejemplo.com");
+
+        // Crear correos con el mismo remitente pero diferentes asuntos
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Oferta importante");
+        correo1.setRemitente(remitente1);
+
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Notificación");
+        correo2.setRemitente(remitente1);
+
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
+
+        // Filtrar por asunto y remitente
+        List<Correo> resultado = bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com"));
     
+        // Comprobar que solo se devuelve el correo con el asunto "Oferta importante" del remitente1
+        assertEquals(1, resultado.size());
+        assertEquals(correo1, resultado.get(0));
+
+
+
+    }
 
 
 }

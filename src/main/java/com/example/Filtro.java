@@ -33,4 +33,5 @@ public class Filtro {
         return correo -> correo.getAsunto().contains(keyword) && 
                          correo.getRemitente().getEmail().equals(remitenteEmail);
     }
+
 }
