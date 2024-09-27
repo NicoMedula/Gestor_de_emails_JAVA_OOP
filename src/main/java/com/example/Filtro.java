@@ -21,8 +21,9 @@ public class Filtro {
         return correo -> correo.getContenido().contains(keyword);
     }
     
-    //Filtros complejos: se combinan dos campos en la busqueda "&&"
+    //Filtro complejo: se combinan dos campos en la busqueda "&&"
     public static Predicate<Correo> filtrarPorAsuntoYRemitente(String keyword, String remitenteEmail) {
+        
         return correo -> correo.getAsunto().contains(keyword) && 
                          correo.getRemitente().getEmail().equals(remitenteEmail);
     }

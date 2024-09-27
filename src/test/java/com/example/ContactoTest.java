@@ -307,21 +307,77 @@ public class ContactoTest
 
     @Test
     public void filtrar_por_asunto_Test() {
-    BandejaDeEntrada bandeja = new BandejaDeEntrada();
-    
-    Correo correo1 = new Correo();
-    correo1.setAsunto("Oferta importante");
-    Correo correo2 = new Correo();
-    correo2.setAsunto("Notificación");
 
-    bandeja.agregarCorreoRecibido(correo1);
-    bandeja.agregarCorreoRecibido(correo2);
-
-    List<Correo> resultado = bandeja.filtrarCorreos(Filtro.filtrarPorAsunto("Oferta"));
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
     
-    assertEquals(1, resultado.size());
-    assertEquals(correo1, resultado.get(0));
-}
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Oferta importante");
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Notificación");
+
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
+
+        List<Correo> resultado = bandeja.filtrarCorreos(Filtro.filtrarPorAsunto("Oferta"));
+    
+        assertEquals(1, resultado.size());
+        assertEquals(correo1, resultado.get(0));
+    }
+
+    @Test
+    public void filtrar_por_remitente_Test() {
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+
+        Contacto remitente1 = new Contacto("Nicolas","nicolas@hotmail.com");
+        Contacto remitente2 = new Contacto("Uriel","uriel@hotmail.com");
+
+        Correo correo1 = new Correo();
+        correo1.setRemitente(remitente1);
+
+        Correo correo2 = new Correo();
+        correo2.setRemitente(remitente2);
+
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
+
+        
+    
+
+        assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorRemitente(remitente1)).size());
+        //assertEquals(correo1, resultado.get(0));
+
+    }
+
+    @Test
+    public void filtrar_por_contenido_Test() {
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+
+        // Crear correos con diferentes contenidos
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Asunto 1");
+        correo1.setContenido("Este es un correo importante sobre ofertas");
+    
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Asunto 2");
+        correo2.setContenido("Este es un correo informativo");
+
+        Correo correo3 = new Correo();
+        correo3.setAsunto("Asunto 3");
+        correo3.setContenido("Este es un correo de notificación importante");
+
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
+        bandeja.agregarCorreoRecibido(correo3);
+
+        // Filtrar por contenido
+        List<Correo> resultado = bandeja.filtrarCorreos(Filtro.filtrarPorContenido("importante"));
+    
+        // Comprobar que solo se devuelve los correo con el contenido "importante"
+        //Hay dos correos con la palabra clave "importante" (correo 1 y correo3)
+        assertEquals(2, resultado.size());
+        assertEquals(correo1, resultado.get(0));
+    }
+
 
 
     
