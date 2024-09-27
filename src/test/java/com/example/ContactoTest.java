@@ -461,5 +461,35 @@ public class ContactoTest
 
     }
 
-    
+    @Test
+    public void filtro_complejo_asunto_y_destinatario_Test() {
+
+
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+        Contacto destinatario1 = new Contacto("desti1","destinatario1@ejemplo.com");
+        Contacto destinatario2 = new Contacto("desti2","destinatario2@ejemplo.com");
+        
+        // Crear correos con diferentes destinatarios
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Asunto 1");
+        correo1.agregarDestinatario(destinatario1);
+
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Asunto 2");
+        correo2.agregarDestinatario(destinatario2);
+
+        Correo correo3 = new Correo();
+        correo3.setAsunto("Asunto 1");
+        correo3.agregarDestinatario(destinatario1);
+
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
+        bandeja.agregarCorreoRecibido(correo3);
+
+        assertEquals(2, bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).size());
+        
+        assertEquals("Asunto 1",bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).get(0).getAsunto() );
+        assertEquals("Asunto 1",bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).get(1).getAsunto() );
+
+    }
 }
