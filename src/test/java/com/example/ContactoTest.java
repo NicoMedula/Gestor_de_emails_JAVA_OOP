@@ -457,7 +457,9 @@ public class ContactoTest
         bandeja.agregarCorreoRecibido(correo3);
 
         assertEquals(2, bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).size());
-
+        assertEquals("Asunto info",bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).get(0).getAsunto() );
 
     }
+
+    
 }
