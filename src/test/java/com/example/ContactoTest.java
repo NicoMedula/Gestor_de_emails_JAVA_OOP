@@ -343,8 +343,8 @@ public class ContactoTest
         
     
 
-        assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorRemitente(remitente1)).size());
-        //assertEquals(correo1, resultado.get(0));
+        assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorRemitente("nicolas@hotmail.com")).size());
+        assertEquals(correo1, bandeja.filtrarCorreos(Filtro.filtrarPorRemitente("nicolas@hotmail.com")).get(0));
 
     }
 

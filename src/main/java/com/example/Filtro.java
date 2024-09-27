@@ -12,8 +12,8 @@ public class Filtro {
     }
 
     // Filtrar por remitente
-    public static Predicate<Correo> filtrarPorRemitente(Contacto remitente) {
-        return correo -> correo.getRemitente().equals(remitente);
+    public static Predicate<Correo> filtrarPorRemitente(String email) {
+        return correo -> correo.getRemitente().getEmail().equals(email);
     }
 
     //Filtrar por contenido
