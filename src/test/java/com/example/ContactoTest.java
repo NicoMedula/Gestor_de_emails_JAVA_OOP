@@ -305,6 +305,25 @@ public class ContactoTest
         assertEquals(correo2, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().get(1));
     }
 
+    @Test
+    public void filtrar_por_asunto_Test() {
+    BandejaDeEntrada bandeja = new BandejaDeEntrada();
+    
+    Correo correo1 = new Correo();
+    correo1.setAsunto("Oferta importante");
+    Correo correo2 = new Correo();
+    correo2.setAsunto("Notificación");
+
+    bandeja.agregarCorreoRecibido(correo1);
+    bandeja.agregarCorreoRecibido(correo2);
+
+    List<Correo> resultado = bandeja.filtrarCorreos(Filtro.filtrarPorAsunto("Oferta"));
+    
+    assertEquals(1, resultado.size());
+    assertEquals(correo1, resultado.get(0));
+}
+
+
     
 
 
