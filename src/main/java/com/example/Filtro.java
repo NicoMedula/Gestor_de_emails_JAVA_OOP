@@ -20,6 +20,12 @@ public class Filtro {
     public static Predicate<Correo> filtrarPorContenido(String keyword) {
         return correo -> correo.getContenido().contains(keyword);
     }
+
+    //Filtrar por destinatario (busca si alguno de los destinatarios tiene el mail especificado)
+    public static Predicate<Correo> filtrarPorDestinatario(String email) {
+        return correo -> correo.getDestinatarios().stream()
+                .anyMatch(destinatario -> destinatario.getEmail().equals(email));
+    }
     
     //Filtro complejo: se combinan dos campos en la busqueda "&&"
     public static Predicate<Correo> filtrarPorAsuntoYRemitente(String keyword, String remitenteEmail) {

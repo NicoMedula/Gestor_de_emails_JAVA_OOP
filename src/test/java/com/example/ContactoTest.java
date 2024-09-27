@@ -340,9 +340,6 @@ public class ContactoTest
         bandeja.agregarCorreoRecibido(correo1);
         bandeja.agregarCorreoRecibido(correo2);
 
-        
-    
-
         assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorRemitente("nicolas@hotmail.com")).size());
         assertEquals(correo1, bandeja.filtrarCorreos(Filtro.filtrarPorRemitente("nicolas@hotmail.com")).get(0));
 
@@ -378,6 +375,32 @@ public class ContactoTest
         assertEquals(correo1, resultado.get(0));
     }
 
+    @Test
+    public void filtrar_por_destinatario_Test() {
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+
+    // Crear contactos destinatarios
+    Contacto destinatario1 = new Contacto("desti1","destinatario1@ejemplo.com");
+    Contacto destinatario2 = new Contacto("desti2","destinatario2@ejemplo.com");
+
+    // Crear correos con diferentes destinatarios
+    Correo correo1 = new Correo();
+    correo1.setAsunto("Correo 1");
+    correo1.agregarDestinatario(destinatario1);
+
+    Correo correo2 = new Correo();
+    correo2.setAsunto("Correo 2");
+    correo2.agregarDestinatario(destinatario2);
+
+    bandeja.agregarCorreoRecibido(correo1);
+    bandeja.agregarCorreoRecibido(correo2);
+   
+    
+    // Comprobar que solo se devuelve el correo dirigido a destinatario1
+    assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).size());
+    assertEquals(correo1, bandeja.filtrarCorreos(Filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).get(0));
+
+    }
 
 
     
