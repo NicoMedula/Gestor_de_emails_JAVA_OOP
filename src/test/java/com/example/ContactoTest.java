@@ -1,11 +1,11 @@
 package com.example;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
-
-
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
 
 
 
@@ -58,7 +58,7 @@ public class ContactoTest
             Contacto c1 = new Contacto("Contacto " + i, "contacto" + i + "@example.com");
             assertEquals("contacto" + i + "@example.com", c1.getEmail());
         }
-    } 
+    }
 
     @Test
     public void crear_100_contactos_validos_Test(){
@@ -133,8 +133,6 @@ public class ContactoTest
         correo1.setContenido("Este es un mensaje de prueba");
         correo1.setDestinatario(c1);
         correo1.setRemitente(c2);
-
-       
 
         
         

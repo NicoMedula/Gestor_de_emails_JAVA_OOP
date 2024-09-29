@@ -1,7 +1,7 @@
-com/example/BandejaDeEntrada.class
-com/example/BandejaDeSalida.class
-com/example/Usuario.class
-com/example/IBandeja.class
-com/example/Filtros.class
-com/example/Correo.class
-com/example/Contacto.class
+com\example\Filtros.class
+com\example\Usuario.class
+com\example\BandejaDeEntrada.class
+com\example\Contacto.class
+com\example\BandejaDeSalida.class
+com\example\IBandeja.class
+com\example\Correo.class
