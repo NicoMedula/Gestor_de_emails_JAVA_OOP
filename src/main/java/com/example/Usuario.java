@@ -24,4 +24,5 @@ public class Usuario {
     public List<Correo> getBandejaDeSalida(){
         return bandejaEnviado.getCorreosEnviados();
     }
+    
 }
