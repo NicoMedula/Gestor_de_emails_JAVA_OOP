@@ -406,6 +406,7 @@ public class ContactoTest
     @Test
     public void filtro_complejo_asunto_y_remitente_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
+        Filtros filtro = new Filtros();
 
         // Crear remitente
         Contacto remitente1 = new Contacto("remi1","remitente1@ejemplo.com");
@@ -423,8 +424,8 @@ public class ContactoTest
         bandeja.agregarCorreoRecibido(correo2);
     
         // Comprobar que solo se devuelve el correo con el asunto "Oferta importante" del remitente1
-        assertEquals(1, bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).size());
-        assertEquals(correo1, bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).get(0));
+        assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).size());
+        assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).get(0));
 
     }
 
@@ -462,6 +463,25 @@ public class ContactoTest
     }
 
     @Test
+        public void filtro_complejo_asunto_remitente_y_contenido_fallido_Test() {
+
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+        Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
+
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Asunto diferente");
+        correo1.setContenido("Contenido diferente");
+        correo1.setRemitente(remitente1);
+
+        bandeja.agregarCorreoRecibido(correo1);
+
+        List<Correo> resultado = bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoRemitenteYContenido("Asunto", "remitente1@ejemplo.com", "contenido importante"));
+
+        assertEquals(0, resultado.size());
+}
+
+
+    @Test
     public void filtro_complejo_asunto_y_destinatario_Test() {
 
 
@@ -492,4 +512,6 @@ public class ContactoTest
         assertEquals("Asunto 1",bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).get(1).getAsunto() );
 
     }
+
+    
 }

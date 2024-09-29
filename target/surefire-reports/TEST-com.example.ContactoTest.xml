@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.ContactoTest" time="0.044" tests="15" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.ContactoTest" time="0.069" tests="23" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="AR"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/22.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/nicolasmedula/Desktop/Gestor_de_emails_JAVA_OOP/target/surefire/surefirebooter3732362182744917982.jar /Users/nicolasmedula/Desktop/Gestor_de_emails_JAVA_OOP/target/surefire 2024-09-27T15-10-36_762-jvmRun1 surefire5914203044661991684tmp surefire_08380317371176609910tmp"/>
+    <property name="sun.java.command" value="/Users/nicolasmedula/Desktop/Gestor_de_emails_JAVA_OOP/target/surefire/surefirebooter16709702726956823481.jar /Users/nicolasmedula/Desktop/Gestor_de_emails_JAVA_OOP/target/surefire 2024-09-29T12-47-34_810-jvmRun1 surefire9164412707194457685tmp surefire_05517609205604761179tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="ContactoTest"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/nicolasmedula/Desktop/Gestor_de_emails_JAVA_OOP/target/surefire/surefirebooter3732362182744917982.jar"/>
+    <property name="surefire.real.class.path" value="/Users/nicolasmedula/Desktop/Gestor_de_emails_JAVA_OOP/target/surefire/surefirebooter16709702726956823481.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="22.0.2"/>
@@ -59,19 +59,27 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="crear_100_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.013"/>
-  <testcase name="crear_1000_contactos_validos_Test" classname="com.example.ContactoTest" time="0.012"/>
+  <testcase name="filtro_complejo_asunto_y_remitente_Test" classname="com.example.ContactoTest" time="0.03"/>
+  <testcase name="crear_100_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.007"/>
+  <testcase name="crear_1000_contactos_validos_Test" classname="com.example.ContactoTest" time="0.009"/>
   <testcase name="crear_correo_electronico_con_10_destinatario_Test" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="crear_10_contactos_validados_correctamente_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="crear_correo_electronico_con_100_destinatarios_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="crear_10_contactos_validados_correctamente_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtro_complejo_asunto_y_destinatario_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="crear_correo_electronico_con_100_destinatarios_Test" classname="com.example.ContactoTest" time="0"/>
   <testcase name="verificar_que_el_mail_se_envia_y_se_almacena_en_bandeja_de_salida_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="varios_destinatarios_reciben_el_correo_en_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="varios_destinatarios_reciben_el_correo_en_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtro_complejo_asunto_remitente_y_contenido_fallido_Test" classname="com.example.ContactoTest" time="0.001"/>
   <testcase name="enviar_mas_de_un_correo_y_que_se_almacene_bandeja_de_entrada_del_destinatario_y_bandeja_de_salida_del_remitente_Test" classname="com.example.ContactoTest" time="0"/>
   <testcase name="crear_correo_electronico_con_las_propiedades_Test" classname="com.example.ContactoTest" time="0"/>
   <testcase name="crear_un_contacto_invalido_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="agregar_destinatario_test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtro_complejo_asunto_remitente_y_contenido_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtrar_por_asunto_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="agregar_destinatario_test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtrar_por_remitente_Test" classname="com.example.ContactoTest" time="0"/>
   <testcase name="crear_10_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="crear_1000_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.007"/>
+  <testcase name="filtrar_por_destinatario_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="crear_1000_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.008"/>
   <testcase name="crear_un_contacto_correctamente_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtrar_por_contenido_Test" classname="com.example.ContactoTest" time="0"/>
   <testcase name="crear_100_contactos_validos_Test" classname="com.example.ContactoTest" time="0"/>
 </testsuite>
