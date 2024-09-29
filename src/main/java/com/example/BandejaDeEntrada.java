@@ -28,6 +28,4 @@ public class BandejaDeEntrada implements IBandeja {
                 .collect(Collectors.toList());
     }
 
-    
-
 }

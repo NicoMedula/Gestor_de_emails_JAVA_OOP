@@ -23,6 +23,6 @@ public class BandejaDeSalida implements IBandeja{
                 .filter(criterio)
                 .collect(Collectors.toList());
     }
-   
+
 }
 
