@@ -306,7 +306,7 @@ public class ContactoTest
     }
 
     @Test
-    public void filtrar_por_asunto_Test() {
+    public void filtrar_por_asunto_bandeja_de_entrada_Test() {
 
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
     
@@ -325,7 +325,7 @@ public class ContactoTest
     }
 
     @Test
-    public void filtrar_por_remitente_Test() {
+    public void filtrar_por_remitente_bandeja_de_entrada_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
 
         Contacto remitente1 = new Contacto("Nicolas","nicolas@hotmail.com");
@@ -346,7 +346,7 @@ public class ContactoTest
     }
 
     @Test
-    public void filtrar_por_contenido_Test() {
+    public void filtrar_por_contenido_bandeja_de_entrada_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
 
         // Crear correos con diferentes contenidos
@@ -376,7 +376,7 @@ public class ContactoTest
     }
 
     @Test
-    public void filtrar_por_destinatario_Test() {
+    public void filtrar_por_destinatario_bandeja_de_entrada_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
 
         // Crear contactos destinatarios
@@ -404,7 +404,7 @@ public class ContactoTest
 
 
     @Test
-    public void filtro_complejo_asunto_y_remitente_Test() {
+    public void filtro_complejo_asunto_y_remitente_bandeja_de_entrada_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
         Filtros filtro = new Filtros();
 
@@ -431,7 +431,7 @@ public class ContactoTest
 
 
     @Test
-    public void filtro_complejo_asunto_remitente_y_contenido_Test() {
+    public void filtro_complejo_asunto_remitente_y_contenido_bandeja_de_entrada_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
 
         Contacto  remitente1 = new Contacto("remi1","remitente1@ejemplo.com");
@@ -463,7 +463,7 @@ public class ContactoTest
     }
 
     @Test
-        public void filtro_complejo_asunto_remitente_y_contenido_fallido_Test() {
+        public void filtro_complejo_asunto_remitente_y_contenido_fallido_bandeja_de_entrada_Test() {
 
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
@@ -482,7 +482,7 @@ public class ContactoTest
 
 
     @Test
-    public void filtro_complejo_asunto_y_destinatario_Test() {
+    public void filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_Test() {
 
 
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
@@ -513,5 +513,33 @@ public class ContactoTest
 
     }
 
-    
+    //PRUEBAS DE FILTROS EN LA BANDEJA DE SALIDA//
+
+    @Test
+    public void filtro_asunto_bandeja_salida_Test() {
+
+        BandejaDeSalida b1 = new BandejaDeSalida();
+
+        Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
+        Contacto destinatario = new Contacto("destinatario","destinatario@gmail.com");
+
+        Correo correo1 = new Correo();
+
+        correo1.setAsunto("Oferta importante");
+        correo1.setRemitente(remitente1);
+        correo1.agregarDestinatario(destinatario);
+
+        b1.enviarCorreo(correo1);
+        
+        Correo  correo2 = new Correo();
+        correo2.setAsunto("Notificación Oferta");
+        correo2.setRemitente(remitente1);
+        correo2.agregarDestinatario(destinatario);
+
+        b1.enviarCorreo(correo2);
+
+        assertEquals(2, b1.filtrarCorreos(Filtros.filtrarPorAsunto("Oferta")).size());
+
+    }
+
 }

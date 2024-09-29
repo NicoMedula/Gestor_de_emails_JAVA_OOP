@@ -8,7 +8,7 @@ public class BandejaDeSalida implements IBandeja{
     private  List<Correo> correosEnviados = new ArrayList<>();
 
     /* agrega el correo enviado */
-    public void agregarCorreo(Correo correo) {
+    public void enviarCorreo(Correo correo) {
         correosEnviados.add(correo);
     }
 
