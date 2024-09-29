@@ -1,10 +1,10 @@
 package com.example;
 
-import java.util.List;
+
 import java.util.function.Predicate;
 
 
-public class Filtro {
+public class Filtros {
 
     // Filtrar por asunto
     public static Predicate<Correo> filtrarPorAsunto(String keyword) {

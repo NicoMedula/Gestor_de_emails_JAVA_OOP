@@ -318,7 +318,7 @@ public class ContactoTest
         bandeja.agregarCorreoRecibido(correo1);
         bandeja.agregarCorreoRecibido(correo2);
 
-        List<Correo> resultado = bandeja.filtrarCorreos(Filtro.filtrarPorAsunto("Oferta"));
+        List<Correo> resultado = bandeja.filtrarCorreos(Filtros.filtrarPorAsunto("Oferta"));
     
         assertEquals(1, resultado.size());
         assertEquals(correo1, resultado.get(0));
@@ -340,8 +340,8 @@ public class ContactoTest
         bandeja.agregarCorreoRecibido(correo1);
         bandeja.agregarCorreoRecibido(correo2);
 
-        assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorRemitente("nicolas@hotmail.com")).size());
-        assertEquals(correo1, bandeja.filtrarCorreos(Filtro.filtrarPorRemitente("nicolas@hotmail.com")).get(0));
+        assertEquals(1, bandeja.filtrarCorreos(Filtros.filtrarPorRemitente("nicolas@hotmail.com")).size());
+        assertEquals(correo1, bandeja.filtrarCorreos(Filtros.filtrarPorRemitente("nicolas@hotmail.com")).get(0));
 
     }
 
@@ -367,7 +367,7 @@ public class ContactoTest
         bandeja.agregarCorreoRecibido(correo3);
 
         // Filtrar por contenido
-        List<Correo> resultado = bandeja.filtrarCorreos(Filtro.filtrarPorContenido("importante"));
+        List<Correo> resultado = bandeja.filtrarCorreos(Filtros.filtrarPorContenido("importante"));
     
         // Comprobar que solo se devuelve los correo con el contenido "importante"
         //Hay dos correos con la palabra clave "importante" (correo 1 y correo3)
@@ -397,8 +397,8 @@ public class ContactoTest
    
     
         // Comprobar que solo se devuelve el correo dirigido a destinatario1
-        assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).size());
-        assertEquals(correo1, bandeja.filtrarCorreos(Filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).get(0));
+        assertEquals(1, bandeja.filtrarCorreos(Filtros.filtrarPorDestinatario("destinatario1@ejemplo.com")).size());
+        assertEquals(correo1, bandeja.filtrarCorreos(Filtros.filtrarPorDestinatario("destinatario1@ejemplo.com")).get(0));
 
     }
 
@@ -423,8 +423,8 @@ public class ContactoTest
         bandeja.agregarCorreoRecibido(correo2);
     
         // Comprobar que solo se devuelve el correo con el asunto "Oferta importante" del remitente1
-        assertEquals(1, bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).size());
-        assertEquals(correo1, bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).get(0));
+        assertEquals(1, bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).size());
+        assertEquals(correo1, bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).get(0));
 
     }
 
@@ -456,8 +456,8 @@ public class ContactoTest
         bandeja.agregarCorreoRecibido(correo2);
         bandeja.agregarCorreoRecibido(correo3);
 
-        assertEquals(2, bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).size());
-        assertEquals("Asunto info",bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).get(0).getAsunto() );
+        assertEquals(2, bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).size());
+        assertEquals("Asunto info",bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).get(0).getAsunto() );
 
     }
 
@@ -486,10 +486,10 @@ public class ContactoTest
         bandeja.agregarCorreoRecibido(correo2);
         bandeja.agregarCorreoRecibido(correo3);
 
-        assertEquals(2, bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).size());
+        assertEquals(2, bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).size());
         
-        assertEquals("Asunto 1",bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).get(0).getAsunto() );
-        assertEquals("Asunto 1",bandeja.filtrarCorreos(Filtro.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).get(1).getAsunto() );
+        assertEquals("Asunto 1",bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).get(0).getAsunto() );
+        assertEquals("Asunto 1",bandeja.filtrarCorreos(Filtros.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).get(1).getAsunto() );
 
     }
 }
