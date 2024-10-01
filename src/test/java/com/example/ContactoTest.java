@@ -209,6 +209,28 @@ public class ContactoTest
 
     }
 
+    
+    @Test
+    public void crear_correo_electronico_con_100_destinatarios_invalidos_Test() {
+        int cont = 0;
+        Correo correo = new Correo();
+        correo.setAsunto("Asunto de Prueba");
+        correo.setContenido("Contenido de Prueba");
+    
+        for (int i = 0; i < 100; i++) {
+            String emailInvalido = "contacto" + i + "@ejemplo"; // email inválido
+            try {
+                Contacto contactoInvalido = new Contacto("Contacto " + i, emailInvalido);
+                correo.setDestinatario(contactoInvalido);
+            } catch (IllegalArgumentException e) {
+                cont++;
+            }
+        }
+    
+        assertEquals(100, cont);  // 10 destinatarios invalidos deben lanzar excepciones
+        assertTrue(correo.getDestinatarios().isEmpty()); // Ningun destinatario debe ser agregado
+    }
+
     @Test 
     public void verificar_que_el_mail_se_envia_y_se_almacena_en_bandeja_de_salida_Test(){
 
