@@ -303,6 +303,8 @@ public class ContactoTest
         assertEquals(correo2, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().get(1));
     }
 
+    // FILTROS PARA BANDEJA DE ENTRADA//
+
     @Test
     public void filtrar_por_asunto_bandeja_de_entrada_Test() {
     
@@ -343,7 +345,6 @@ public class ContactoTest
         assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorRemitente("nicolas@hotmail.com")).size()); // Usar la instancia de Filtros
         assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorRemitente("nicolas@hotmail.com")).get(0)); // Usar la instancia de Filtros
     }
-    
 
     @Test
     public void filtrar_por_contenido_bandeja_de_entrada_Test() {
@@ -564,5 +565,7 @@ public class ContactoTest
         assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).size());
         assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).get(0));
     }
+
+
 }
     
