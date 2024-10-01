@@ -18,6 +18,7 @@ public class ContactoTest
         Contacto c1 = new Contacto("Nico", "nicolas@hotmail.com");
 
         assertEquals("nicolas@hotmail.com", c1.getEmail());
+        assertEquals("Nico", c1.getNombre());
     }
 
     @Test
@@ -465,6 +466,7 @@ public class ContactoTest
         assertEquals("Asunto info", bandeja.filtrarCorreos(filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).get(0).getAsunto());
     }
 
+    
     @Test
     public void filtro_complejo_asunto_remitente_y_contenido_fallido_bandeja_de_entrada_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
