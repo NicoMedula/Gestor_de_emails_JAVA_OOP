@@ -1,10 +1,9 @@
 package com.example;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 
@@ -164,6 +163,28 @@ public class ContactoTest
         assertTrue(correo.getDestinatarios().containsAll(correo.getDestinatarios()));
 
     }
+
+    @Test
+    public void crear_correo_electronico_con_10_destinatarios_invalidos_Test() {
+        int cont = 0;
+        Correo correo = new Correo();
+        correo.setAsunto("Asunto de Prueba");
+        correo.setContenido("Contenido de Prueba");
+    
+        for (int i = 0; i < 10; i++) {
+            String emailInvalido = "contacto" + i + "@ejemplo"; // email inválido
+            try {
+                Contacto contactoInvalido = new Contacto("Contacto " + i, emailInvalido);
+                correo.setDestinatario(contactoInvalido);
+            } catch (IllegalArgumentException e) {
+                cont++;
+            }
+        }
+    
+        assertEquals(10, cont);  // 10 destinatarios invalidos deben lanzar excepciones
+        assertTrue(correo.getDestinatarios().isEmpty()); // Ningún destinatario debe ser agregado
+    }
+    
 
     @Test
     public void crear_correo_electronico_con_100_destinatarios_Test(){
