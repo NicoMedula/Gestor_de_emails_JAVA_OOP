@@ -448,6 +448,28 @@ public class ContactoTest
         assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).size()); // Usar la instancia de Filtros
         assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@ejemplo.com")).get(0)); // Usar la instancia de Filtros
     }
+
+    @Test
+    public void filtrar_por_destinatario_bandeja_de_entrada_fallido_Test() {
+
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+        Filtros filtro = new Filtros();
+        // Crear contactos destinatarios
+        Contacto destinatario1 = new Contacto("desti1", "destinatario1@ejemplo.com");
+        Contacto destinatario2 = new Contacto("desti2", "destinatario2@ejemplo.com");
+        // Crear correos con diferentes destinatarios
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Correo 1");
+        correo1.agregarDestinatario(destinatario1);
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Correo 2");
+        correo2.agregarDestinatario(destinatario2);
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
+        // Comprobar que no se devuelve ningún correo al filtrar por destinatario que no está en la bandeja
+        assertEquals(0, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario3@ejemplo.com")).size());
+
+    }
     
 
 
