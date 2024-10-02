@@ -412,6 +412,29 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorRemitente("nicolas@hotmail.com")).get(0)); // Usar la instancia de Filtros
     }
 
+    /*@Test
+public void filtrar_por_remitente_bandeja_de_entrada_Test_Fallido() {
+    BandejaDeEntrada bandeja = new BandejaDeEntrada();
+    Filtros filtro = new Filtros();
+
+    Contacto remitente1 = new Contacto("Nicolas", "nicolas@hotmail.com");
+    Contacto remitente2 = new Contacto("Uriel", "uriel@hotmail.com");
+
+    Correo correo1 = new Correo();
+    correo1.setRemitente(remitente1);
+
+    Correo correo2 = new Correo();
+    correo2.setRemitente(remitente2);
+
+    bandeja.agregarCorreoRecibido(correo1);
+    bandeja.agregarCorreoRecibido(correo2);
+
+    // Aserciones que provocarán un fallo
+    assertEquals(2, bandeja.filtrarCorreos(filtro.filtrarPorRemitente("nicolas@hotmail.com")).size()); // Se espera 2 correos, pero debería haber 1
+    assertEquals(correo2, bandeja.filtrarCorreos(filtro.filtrarPorRemitente("nicolas@hotmail.com")).get(0)); // Esto fallará porque debería ser correo1
+}
+ */
+
     @Test
     public void filtrar_por_contenido_bandeja_de_entrada_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
