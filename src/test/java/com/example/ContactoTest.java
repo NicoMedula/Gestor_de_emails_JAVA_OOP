@@ -370,8 +370,29 @@ public class ContactoTest
         assertEquals(correo1, resultado.get(0));
     }
 
-        @Test
-        public void filtrar_por_remitente_bandeja_de_entrada_Test() {
+    /*@Test
+public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
+
+    BandejaDeEntrada bandeja = new BandejaDeEntrada();
+    Filtros filtro = new Filtros(); // Crear una instancia de Filtros
+
+    Correo correo1 = new Correo();
+    correo1.setAsunto("Oferta importante");
+    Correo correo2 = new Correo();
+    correo2.setAsunto("Notificación");
+
+    bandeja.agregarCorreoRecibido(correo1);
+    bandeja.agregarCorreoRecibido(correo2);
+
+    List<Correo> resultado = bandeja.filtrarCorreos(filtro.filtrarPorAsunto("Oferta")); // Usar la instancia de Filtros
+
+    // Aseguramos que el resultado sea incorrecto (esto hará que el test falle)
+    assertEquals(2, resultado.size()); // Se espera 2 correos, pero solo debería haber 1
+}
+ */
+
+    @Test
+    public void filtrar_por_remitente_bandeja_de_entrada_Test() {
         BandejaDeEntrada bandeja = new BandejaDeEntrada();
         Filtros filtro = new Filtros();
     

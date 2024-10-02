@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.ContactoTest" time="0.219" tests="27" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.ContactoTest" time="0.285" tests="34" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="AR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Users\Home\Desktop\jdk\Oracle_JDK-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\Home\AppData\Local\Temp\surefire3595044502417540749\surefirebooter9047133249157719580.jar C:\Users\Home\AppData\Local\Temp\surefire3595044502417540749 2024-10-01T20-57-59_883-jvmRun1 surefire9429253380598323346tmp surefire_016138601458658106518tmp"/>
+    <property name="sun.java.command" value="C:\Users\Home\AppData\Local\Temp\surefire10364471413443447101\surefirebooter8370943603992972691.jar C:\Users\Home\AppData\Local\Temp\surefire10364471413443447101 2024-10-02T16-11-38_394-jvmRun1 surefire8907174461444107272tmp surefire_02062104408415226763tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="com.example.ContactoTest"/>
     <property name="surefire.test.class.path" value="C:\Users\Home\Desktop\Prueba\Gestor_de_emails_JAVA_OOP\target\test-classes;C:\Users\Home\Desktop\Prueba\Gestor_de_emails_JAVA_OOP\target\classes;C:\Users\Home\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.0\junit-jupiter-api-5.9.0.jar;C:\Users\Home\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Home\.m2\repository\org\junit\platform\junit-platform-commons\1.9.0\junit-platform-commons-1.9.0.jar;C:\Users\Home\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Home\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.0\junit-jupiter-engine-5.9.0.jar;C:\Users\Home\.m2\repository\org\junit\platform\junit-platform-engine\1.9.0\junit-platform-engine-1.9.0.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Home\AppData\Local\Temp\surefire3595044502417540749\surefirebooter9047133249157719580.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Home\AppData\Local\Temp\surefire10364471413443447101\surefirebooter8370943603992972691.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.2+9-70"/>
@@ -60,31 +60,38 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="crear_100_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.062"/>
-  <testcase name="crear_1000_contactos_validos_Test" classname="com.example.ContactoTest" time="0.035"/>
-  <testcase name="crear_correo_electronico_con_10_destinatario_Test" classname="com.example.ContactoTest" time="0.003"/>
+  <testcase name="filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_fallido_Test" classname="com.example.ContactoTest" time="0.072"/>
+  <testcase name="crear_100_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.02"/>
+  <testcase name="crear_1000_contactos_validos_Test" classname="com.example.ContactoTest" time="0.058"/>
+  <testcase name="crear_correo_electronico_con_10_destinatario_Test" classname="com.example.ContactoTest" time="0.004"/>
+  <testcase name="filtro_por_contenido_bandeja_salida_Test_Fallido" classname="com.example.ContactoTest" time="0.003"/>
+  <testcase name="filtro_por_contenido_bandeja_salida_Test" classname="com.example.ContactoTest" time="0.002"/>
+  <testcase name="filtro_complejo_asunto_y_remitente_bandeja_de_entrada_fallido_Test" classname="com.example.ContactoTest" time="0.002"/>
   <testcase name="crear_10_contactos_validados_correctamente_Test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="crear_correo_electronico_con_10_destinatarios_invalidos_Test" classname="com.example.ContactoTest" time="0.003"/>
-  <testcase name="filtro_asunto_bandeja_salida_Test" classname="com.example.ContactoTest" time="0.003"/>
-  <testcase name="filtro_complejo_asunto_remitente_y_contenido_fallido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.003"/>
+  <testcase name="crear_correo_electronico_con_10_destinatarios_invalidos_Test" classname="com.example.ContactoTest" time="0.002"/>
+  <testcase name="filtro_asunto_bandeja_salida_fallido_Test" classname="com.example.ContactoTest" time="0.003"/>
+  <testcase name="filtro_asunto_bandeja_salida_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtro_por_destinatario_bandeja_salida_Test_Fallido" classname="com.example.ContactoTest" time="0.002"/>
+  <testcase name="filtro_complejo_asunto_remitente_y_contenido_fallido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtrar_por_destinatario_bandeja_de_entrada_fallido_Test" classname="com.example.ContactoTest" time="0.001"/>
   <testcase name="crear_correo_electronico_con_100_destinatarios_Test" classname="com.example.ContactoTest" time="0.004"/>
-  <testcase name="verificar_que_el_mail_se_envia_y_se_almacena_en_bandeja_de_salida_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="verificar_que_el_mail_se_envia_y_se_almacena_en_bandeja_de_salida_Test" classname="com.example.ContactoTest" time="0.002"/>
   <testcase name="varios_destinatarios_reciben_el_correo_en_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.002"/>
   <testcase name="enviar_mas_de_un_correo_y_que_se_almacene_bandeja_de_entrada_del_destinatario_y_bandeja_de_salida_del_remitente_Test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="crear_correo_electronico_con_las_propiedades_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="crear_un_contacto_invalido_Test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="filtro_complejo_asunto_remitente_y_contenido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="crear_correo_electronico_con_las_propiedades_Test" classname="com.example.ContactoTest" time="0.002"/>
+  <testcase name="crear_un_contacto_invalido_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtro_complejo_asunto_remitente_y_contenido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
   <testcase name="filtro_complejo_asunto_y_remitente_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="filtro_por_destinatario_bandeja_salida_Test" classname="com.example.ContactoTest" time="0.004"/>
-  <testcase name="filtrar_por_asunto_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.004"/>
-  <testcase name="agregar_destinatario_test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="crear_correo_electronico_con_100_destinatarios_invalidos_Test" classname="com.example.ContactoTest" time="0.004"/>
-  <testcase name="crear_10_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="filtrar_por_remitente_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtro_por_destinatario_bandeja_salida_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtrar_por_asunto_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="agregar_destinatario_test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="crear_correo_electronico_con_100_destinatarios_invalidos_Test" classname="com.example.ContactoTest" time="0.003"/>
+  <testcase name="crear_10_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.002"/>
+  <testcase name="filtrar_por_remitente_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.002"/>
   <testcase name="filtrar_por_destinatario_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="filtrar_por_contenido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="crear_1000_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.031"/>
-  <testcase name="crear_un_contacto_correctamente_Test" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="crear_100_contactos_validos_Test" classname="com.example.ContactoTest" time="0.002"/>
+  <testcase name="filtrar_por_contenido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="crear_1000_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.022"/>
+  <testcase name="crear_un_contacto_correctamente_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="crear_100_contactos_validos_Test" classname="com.example.ContactoTest" time="0.003"/>
 </testsuite>
