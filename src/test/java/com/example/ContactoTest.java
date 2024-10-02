@@ -563,6 +563,29 @@ public class ContactoTest
         assertEquals("Asunto 1", bandeja.filtrarCorreos(filtro.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).get(1).getAsunto());
     }
     
+    @Test
+    public void filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_fallido_Test() {
+        
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+        Filtros filtro = new Filtros();
+        
+        Contacto destinatario1 = new Contacto("desti1", "destinatario1@ejemplo.com");
+        
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Asunto 1");
+        correo1.agregarDestinatario(destinatario1);
+        
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Asunto 2");
+        correo2.agregarDestinatario(destinatario1);
+        
+        bandeja.agregarCorreoRecibido(correo1);
+
+        List<Correo> resultado = bandeja.filtrarCorreos(filtro.filtrarPorAsuntoYDestinatario("Asunto 3", "destinatario1@ejemplo.com"));
+        
+        assertEquals(0, resultado.size());
+        
+    }
 
     @Test
     public void filtro_asunto_bandeja_salida_Test() {
