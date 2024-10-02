@@ -613,10 +613,10 @@ public class ContactoTest
     }
 
 
-}
 
-    /*@Test
-public void filtro_por_destinatario_bandeja_salida_Test_Fallido() {
+
+    @Test
+    public void filtro_por_destinatario_bandeja_salida_Test_Fallido() {
     BandejaDeSalida bandeja = new BandejaDeSalida();
     Filtros filtro = new Filtros();
 
@@ -637,13 +637,12 @@ public void filtro_por_destinatario_bandeja_salida_Test_Fallido() {
     bandeja.enviarCorreo(correo2);
 
     // Se espera incorrectamente que haya 2 correos con el destinatario "destinatario1@gmail.com" (esto hará que falle)
-    assertEquals(2, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).size());
-    assertEquals(correo2, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).get(0));
-}
- */
-    
+    assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).size());
+    assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).get(0));
+    }
 
-    /*@Test
+
+    @Test
     public void filtro_por_contenido_bandeja_salida_Test() {
     BandejaDeSalida bandeja = new BandejaDeSalida();
     Filtros filtro = new Filtros();
@@ -668,10 +667,10 @@ public void filtro_por_destinatario_bandeja_salida_Test_Fallido() {
     // Filtrar por correos que contienen "especial" en el contenido
     assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorContenido("especial")).size());
     assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorContenido("especial")).get(0));
-}
-*/
-    /*@Test
-    public void filtro_por_contenido_bandeja_salida_Test_Fallido() {
+    }
+
+        @Test
+        public void filtro_por_contenido_bandeja_salida_Test_Fallido() {
         BandejaDeSalida bandeja = new BandejaDeSalida();
         Filtros filtro = new Filtros();
 
@@ -693,6 +692,7 @@ public void filtro_por_destinatario_bandeja_salida_Test_Fallido() {
         bandeja.enviarCorreo(correo2);
 
         // Filtrar por correos que contienen "inexistente" en el contenido (esto no existe en ninguno)
-        assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorContenido("inexistente")).size());
+        assertEquals(0, bandeja.filtrarCorreos(filtro.filtrarPorContenido("inexistente")).size());
+    }
+
 }
-*/
