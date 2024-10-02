@@ -586,6 +586,29 @@ public class ContactoTest
     
         assertEquals(2, b1.filtrarCorreos(filtro.filtrarPorAsunto("Oferta")).size());
     }
+
+    @Test
+    public void filtro_asunto_bandeja_salida_fallido_Test() {
+        BandejaDeSalida bandeja = new BandejaDeSalida();
+        Filtros filtro = new Filtros();
+        
+        Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
+        Contacto destinatario = new Contacto("destinatario", "destinatario@gmail.com");
+        
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Oferta importante");
+        correo1.setRemitente(remitente1);
+        correo1.agregarDestinatario(destinatario);
+        bandeja.enviarCorreo(correo1);
+        
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Notificación Oferta");
+        correo2.setRemitente(remitente1);
+        correo2.agregarDestinatario(destinatario);
+        bandeja.enviarCorreo(correo2);
+        
+        assertEquals(0, bandeja.filtrarCorreos(filtro.filtrarPorAsunto("Oferta Falsa")).size());
+    }
     
     @Test
     public void filtro_por_destinatario_bandeja_salida_Test() {
