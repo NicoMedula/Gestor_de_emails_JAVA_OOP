@@ -7,25 +7,25 @@ import java.util.stream.Collectors;
 
 public class BandejaDeEntrada implements IBandeja {
 
-    private ArrayList<Correo> correosRecibidos;
+    private final List<Correo> correosRecibidos;
 
     public BandejaDeEntrada() {
         this.correosRecibidos = new ArrayList<>();
     }
 
-    public void agregarCorreoRecibido(Correo correo){
+    public void agregarCorreoRecibido(Correo correo) {
         correosRecibidos.add(correo);
     }
 
-    public ArrayList<Correo> getCorreosRecibidos(){
+    public List<Correo> getCorreosRecibidos() {
         return correosRecibidos;
     }
 
-    //Metodo para aplicar filtros
+    // Método para aplicar filtros
     public List<Correo> filtrarCorreos(Predicate<Correo> criterio) {
         return correosRecibidos.stream()
                 .filter(criterio)
                 .collect(Collectors.toList());
     }
-
 }
+

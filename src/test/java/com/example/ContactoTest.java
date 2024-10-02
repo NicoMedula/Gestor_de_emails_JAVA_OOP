@@ -1,9 +1,10 @@
 package com.example;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 
@@ -613,4 +614,85 @@ public class ContactoTest
 
 
 }
+
+    /*@Test
+public void filtro_por_destinatario_bandeja_salida_Test_Fallido() {
+    BandejaDeSalida bandeja = new BandejaDeSalida();
+    Filtros filtro = new Filtros();
+
+    Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
+    Contacto destinatario1 = new Contacto("destinatario1", "destinatario1@gmail.com");
+    Contacto destinatario2 = new Contacto("destinatario2", "destinatario2@gmail.com");
+
+    Correo correo1 = new Correo();
+    correo1.setAsunto("Asunto 1");
+    correo1.setRemitente(remitente1);
+    correo1.agregarDestinatario(destinatario1);
+    bandeja.enviarCorreo(correo1);
+
+    Correo correo2 = new Correo();
+    correo2.setAsunto("Asunto 2");
+    correo2.setRemitente(remitente1);
+    correo2.agregarDestinatario(destinatario2);
+    bandeja.enviarCorreo(correo2);
+
+    // Se espera incorrectamente que haya 2 correos con el destinatario "destinatario1@gmail.com" (esto hará que falle)
+    assertEquals(2, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).size());
+    assertEquals(correo2, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).get(0));
+}
+ */
     
+
+    /*@Test
+    public void filtro_por_contenido_bandeja_salida_Test() {
+    BandejaDeSalida bandeja = new BandejaDeSalida();
+    Filtros filtro = new Filtros();
+
+    Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
+    Contacto destinatario1 = new Contacto("destinatario1", "destinatario1@gmail.com");
+
+    Correo correo1 = new Correo();
+    correo1.setAsunto("Asunto 1");
+    correo1.setRemitente(remitente1);
+    correo1.setContenido("Este es un contenido especial");
+    correo1.agregarDestinatario(destinatario1);
+    bandeja.enviarCorreo(correo1);
+
+    Correo correo2 = new Correo();
+    correo2.setAsunto("Asunto 2");
+    correo2.setRemitente(remitente1);
+    correo2.setContenido("Contenido normal");
+    correo2.agregarDestinatario(destinatario1);
+    bandeja.enviarCorreo(correo2);
+
+    // Filtrar por correos que contienen "especial" en el contenido
+    assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorContenido("especial")).size());
+    assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorContenido("especial")).get(0));
+}
+*/
+    /*@Test
+    public void filtro_por_contenido_bandeja_salida_Test_Fallido() {
+        BandejaDeSalida bandeja = new BandejaDeSalida();
+        Filtros filtro = new Filtros();
+
+        Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
+        Contacto destinatario1 = new Contacto("destinatario1", "destinatario1@gmail.com");
+
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Asunto 1");
+        correo1.setRemitente(remitente1);
+        correo1.setContenido("Este es un contenido especial");
+        correo1.agregarDestinatario(destinatario1);
+        bandeja.enviarCorreo(correo1);
+
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Asunto 2");
+        correo2.setRemitente(remitente1);
+        correo2.setContenido("Contenido normal");
+        correo2.agregarDestinatario(destinatario1);
+        bandeja.enviarCorreo(correo2);
+
+        // Filtrar por correos que contienen "inexistente" en el contenido (esto no existe en ninguno)
+        assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorContenido("inexistente")).size());
+}
+*/
