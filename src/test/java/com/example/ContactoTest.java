@@ -477,6 +477,33 @@ public class ContactoTest
 
     }
 
+    @Test
+    public void filtro_complejo_asunto_y_remitente_bandeja_de_entrada_fallido_Test() {
+
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+        Filtros filtro = new Filtros();
+        
+        // Crear remitente
+        Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
+        Contacto remitente2 = new Contacto("desti1", "remitente2@ejemplo.com");
+        
+        // Crear correos con el mismo remitente pero diferentes asuntos
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Oferta importante");
+        correo1.setRemitente(remitente1);
+        
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Notificación");
+        correo2.setRemitente(remitente2);
+        
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
+        
+        // Comprobar que no se devuelven correos con el asunto "Oferta importante" del remitente1
+        assertEquals(0, bandeja.filtrarCorreos(filtro.filtrarPorAsuntoYRemitente("Cualquiera", "remitente1@ejemplo.com")).size());
+        
+    }
+
 
     @Test
     public void filtro_complejo_asunto_remitente_y_contenido_bandeja_de_entrada_Test() {
