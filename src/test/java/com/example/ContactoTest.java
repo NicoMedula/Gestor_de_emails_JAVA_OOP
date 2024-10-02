@@ -466,6 +466,36 @@ public void filtrar_por_remitente_bandeja_de_entrada_Test_Fallido() {
         assertEquals(correo1, resultado.get(0));
     }
     
+    /*/@Test
+public void filtrar_por_contenido_bandeja_de_entrada_Test_Fallido() {
+    BandejaDeEntrada bandeja = new BandejaDeEntrada();
+    Filtros filtro = new Filtros();
+
+    // Crear correos con diferentes contenidos
+    Correo correo1 = new Correo();
+    correo1.setAsunto("Asunto 1");
+    correo1.setContenido("Este es un correo importante sobre ofertas");
+
+    Correo correo2 = new Correo();
+    correo2.setAsunto("Asunto 2");
+    correo2.setContenido("Este es un correo informativo");
+
+    Correo correo3 = new Correo();
+    correo3.setAsunto("Asunto 3");
+    correo3.setContenido("Este es un correo de notificación importante");
+
+    bandeja.agregarCorreoRecibido(correo1);
+    bandeja.agregarCorreoRecibido(correo2);
+    bandeja.agregarCorreoRecibido(correo3);
+
+    // Filtrar por contenido
+    List<Correo> resultado = bandeja.filtrarCorreos(filtro.filtrarPorContenido("importante")); // Usar la instancia de Filtros
+
+    // Comprobar que se devuelve un número incorrecto de correos
+    assertEquals(1, resultado.size()); // Se espera que haya 1, pero debería haber 2
+    assertEquals(correo2, resultado.get(0)); // Esto fallará porque debería ser correo1 o correo3
+}
+ */
 
     @Test
     public void filtrar_por_destinatario_bandeja_de_entrada_Test() {
