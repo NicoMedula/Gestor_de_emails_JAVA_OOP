@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 <span class="fc" id="L8">    private  List&lt;Correo&gt; correosEnviados = new ArrayList&lt;&gt;();</span>
 
     /* agrega el correo enviado */
-    public void agregarCorreo(Correo correo) {
+    public void enviarCorreo(Correo correo) {
 <span class="fc" id="L12">        correosEnviados.add(correo);</span>
 <span class="fc" id="L13">    }</span>
 
@@ -19,11 +19,11 @@ import java.util.stream.Collectors;
 
     //Metodo para aplicar filtros
     public List&lt;Correo&gt; filtrarCorreos(Predicate&lt;Correo&gt; criterio) {
-<span class="nc" id="L22">        return correosEnviados.stream()</span>
-<span class="nc" id="L23">                .filter(criterio)</span>
-<span class="nc" id="L24">                .collect(Collectors.toList());</span>
+<span class="fc" id="L22">        return correosEnviados.stream()</span>
+<span class="fc" id="L23">                .filter(criterio)</span>
+<span class="fc" id="L24">                .collect(Collectors.toList());</span>
     }
-   
+
 }
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

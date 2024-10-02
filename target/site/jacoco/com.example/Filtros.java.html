@@ -1,53 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Filtros.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">Filtros.java</span></div><h1>Filtros.java</h1><pre class="source lang-java linenums">package com.example;
 
-
 import java.util.function.Predicate;
 
-
-<span class="fc" id="L7">public class Filtros {</span>
+<span class="fc" id="L5">public class Filtros {</span>
 
     // Filtrar por asunto
-    public static Predicate&lt;Correo&gt; filtrarPorAsunto(String keyword) {
-<span class="fc" id="L11">        return correo -&gt; correo.getAsunto().contains(keyword);</span>
+    public Predicate&lt;Correo&gt; filtrarPorAsunto(String keyword) {
+<span class="fc" id="L9">        return correo -&gt; correo.getAsunto().contains(keyword);</span>
     }
 
     // Filtrar por remitente
-    public static Predicate&lt;Correo&gt; filtrarPorRemitente(String email) {
-<span class="fc" id="L16">        return correo -&gt; correo.getRemitente().getEmail().equals(email);</span>
+    public Predicate&lt;Correo&gt; filtrarPorRemitente(String email) {
+<span class="fc" id="L14">        return correo -&gt; correo.getRemitente().getEmail().equals(email);</span>
     }
 
-    //Filtrar por contenido
-    public static Predicate&lt;Correo&gt; filtrarPorContenido(String keyword) {
-<span class="fc" id="L21">        return correo -&gt; correo.getContenido().contains(keyword);</span>
+    // Filtrar por contenido
+    public Predicate&lt;Correo&gt; filtrarPorContenido(String keyword) {
+<span class="fc" id="L19">        return correo -&gt; correo.getContenido().contains(keyword);</span>
     }
 
-    //Filtrar por destinatario (busca si alguno de los destinatarios tiene el mail especificado)
-    public static Predicate&lt;Correo&gt; filtrarPorDestinatario(String email) {
-<span class="fc" id="L26">        return correo -&gt; correo.getDestinatarios().stream()</span>
-<span class="fc" id="L27">                .anyMatch(destinatario -&gt; destinatario.getEmail().equals(email));</span>
+    // Filtrar por destinatario
+    public Predicate&lt;Correo&gt; filtrarPorDestinatario(String email) {
+<span class="fc" id="L24">        return correo -&gt; correo.getDestinatarios().stream()</span>
+<span class="fc" id="L25">                .anyMatch(destinatario -&gt; destinatario.getEmail().equals(email));</span>
     }
-    
-    //Filtro complejo: se combinan dos campos en la busqueda &quot;&amp;&amp;&quot;
+
+    // Filtro complejo: se combinan dos campos en la búsqueda &quot;&amp;&amp;&quot; (asunto y remitente)
     public Predicate&lt;Correo&gt; filtrarPorAsuntoYRemitente(String keyword, String remitenteEmail) {
-        
-<span class="fc bfc" id="L33" title="All 2 branches covered.">        return correo -&gt; correo.getAsunto().contains(keyword) &amp;&amp; </span>
-<span class="pc bpc" id="L34" title="1 of 2 branches missed.">                         correo.getRemitente().getEmail().equals(remitenteEmail);</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        return correo -&gt; correo.getAsunto().contains(keyword) &amp;&amp; </span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">                        correo.getRemitente().getEmail().equals(remitenteEmail);</span>
     }
 
     // Filtro complejo: Filtrar por asunto, remitente y contenido
-    public static Predicate&lt;Correo&gt; filtrarPorAsuntoRemitenteYContenido(String keywordAsunto, String remitenteEmail, String keywordContenido) {
-<span class="fc bfc" id="L39" title="All 2 branches covered.">        return correo -&gt; correo.getAsunto().contains(keywordAsunto) &amp;&amp;</span>
-<span class="pc bpc" id="L40" title="1 of 2 branches missed.">                     correo.getRemitente().getEmail().equals(remitenteEmail) &amp;&amp;</span>
-<span class="fc bfc" id="L41" title="All 2 branches covered.">                     correo.getContenido().contains(keywordContenido);</span>
+    public Predicate&lt;Correo&gt; filtrarPorAsuntoRemitenteYContenido(String keywordAsunto, String remitenteEmail, String keywordContenido) {
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        return correo -&gt; correo.getAsunto().contains(keywordAsunto) &amp;&amp;</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">                        correo.getRemitente().getEmail().equals(remitenteEmail) &amp;&amp;</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">                        correo.getContenido().contains(keywordContenido);</span>
     }
 
     // Filtro complejo: Filtrar por asunto y destinatario
-    public static Predicate&lt;Correo&gt; filtrarPorAsuntoYDestinatario(String keywordAsunto, String destinatarioEmail) {
-<span class="fc bfc" id="L46" title="All 2 branches covered.">        return correo -&gt; correo.getAsunto().contains(keywordAsunto) &amp;&amp;</span>
-<span class="pc bpc" id="L47" title="1 of 2 branches missed.">                     correo.getDestinatarios().stream().anyMatch(destinatario -&gt; destinatario.getEmail().equals(destinatarioEmail));</span>
+    public Predicate&lt;Correo&gt; filtrarPorAsuntoYDestinatario(String keywordAsunto, String destinatarioEmail) {
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        return correo -&gt; correo.getAsunto().contains(keywordAsunto) &amp;&amp;</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">                        correo.getDestinatarios().stream().anyMatch(destinatario -&gt; destinatario.getEmail().equals(destinatarioEmail));</span>
     }
-
-    
-
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

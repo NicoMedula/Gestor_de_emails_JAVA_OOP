@@ -7,28 +7,26 @@ import java.util.stream.Collectors;
 
 public class BandejaDeEntrada implements IBandeja {
 
-    private ArrayList&lt;Correo&gt; correosRecibidos;
+    private final List&lt;Correo&gt; correosRecibidos;
 
-<span class="fc" id="L12">    public BandejaDeEntrada() {</span>
-<span class="fc" id="L13">        this.correosRecibidos = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L14">    }</span>
+<span class="nc" id="L12">    public BandejaDeEntrada() {</span>
+<span class="nc" id="L13">        this.correosRecibidos = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L14">    }</span>
 
-    public void agregarCorreoRecibido(Correo correo){
-<span class="fc" id="L17">        correosRecibidos.add(correo);</span>
-<span class="fc" id="L18">    }</span>
+    public void agregarCorreoRecibido(Correo correo) {
+<span class="nc" id="L17">        correosRecibidos.add(correo);</span>
+<span class="nc" id="L18">    }</span>
 
-    public ArrayList&lt;Correo&gt; getCorreosRecibidos(){
-<span class="fc" id="L21">        return correosRecibidos;</span>
+    public List&lt;Correo&gt; getCorreosRecibidos() {
+<span class="nc" id="L21">        return correosRecibidos;</span>
     }
 
-    //Metodo para aplicar filtros
+    // Método para aplicar filtros
     public List&lt;Correo&gt; filtrarCorreos(Predicate&lt;Correo&gt; criterio) {
-<span class="fc" id="L26">        return correosRecibidos.stream()</span>
-<span class="fc" id="L27">                .filter(criterio)</span>
-<span class="fc" id="L28">                .collect(Collectors.toList());</span>
+<span class="nc" id="L26">        return correosRecibidos.stream()</span>
+<span class="nc" id="L27">                .filter(criterio)</span>
+<span class="nc" id="L28">                .collect(Collectors.toList());</span>
     }
-
-    
-
 }
+
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
