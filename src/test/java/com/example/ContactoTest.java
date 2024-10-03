@@ -896,5 +896,60 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         
     }
 
+    @Test
+    public void borrar_correo_bandeja_de_entrada_Test() {
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+        Filtros filtro = new Filtros();
+
+        Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
+        Contacto destinatario1 = new Contacto("destinatario1", "destinatario1@gmail.com");
+        Contacto destinatario2 = new Contacto("destinatario2", "destinatario2@gmail.com");
+
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Asunto 1");
+        correo1.setRemitente(remitente1);
+        correo1.agregarDestinatario(destinatario1);
+        bandeja.agregarCorreoRecibido(correo1);
+
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Asunto 2");
+        correo2.setRemitente(remitente1);
+        correo2.agregarDestinatario(destinatario2);
+        bandeja.agregarCorreoRecibido(correo2);
+
+        Correo correo3 = new Correo();
+        correo3.setAsunto("Asunto 3");
+        correo3.setRemitente(remitente1);
+        correo3.agregarDestinatario(destinatario1);
+        bandeja.agregarCorreoRecibido(correo3);
+
+        
+        Correo correo4 = new Correo();
+        correo4.setAsunto("Asunto 3");
+        correo4.setRemitente(remitente1);
+        correo4.agregarDestinatario(destinatario1);
+        bandeja.agregarCorreoRecibido(correo4);
+
+        
+        Correo correo5 = new Correo();
+        correo5.setAsunto("Asunto 3");
+        correo5.setRemitente(remitente1);
+        correo5.agregarDestinatario(destinatario1);
+        bandeja.agregarCorreoRecibido(correo5);
+
+        // Se espera incorrectamente que haya 2 correos con el destinatario "destinatario1@gmail.com" (esto hará que falle)
+        assertEquals(4, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).size());
+        assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).get(0));
+
+        bandeja.borrarCorreo(correo5);
+        bandeja.borrarCorreo(correo3);
+        bandeja.borrarCorreo(correo4);
+
+        assertEquals(1, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).size());
+        assertEquals(correo1, bandeja.filtrarCorreos(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).get(0));
+        
+        
+    }
+
     
 }
