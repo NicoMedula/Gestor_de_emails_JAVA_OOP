@@ -31,5 +31,6 @@ public class BandejaDeEntrada implements IBandeja {
     public void borrarCorreo(Correo correo) {
         correosRecibidos.remove(correo);
     }
+    
 }
 

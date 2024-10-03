@@ -1,5 +1,6 @@
 package com.example;
 
-public class IFavorito {
+public interface IFavorito {
+
     
 }
