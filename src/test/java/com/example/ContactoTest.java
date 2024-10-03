@@ -1,9 +1,10 @@
 package com.example;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 
@@ -370,25 +371,28 @@ public class ContactoTest
     }
 
     /*@Test
-public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
+    public void filtrar_por_asunto_bandeja_de_entrada_Test_fallido() {
 
-    BandejaDeEntrada bandeja = new BandejaDeEntrada();
-    Filtros filtro = new Filtros(); // Crear una instancia de Filtros
+        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+        Filtros filtro = new Filtros();
 
-    Correo correo1 = new Correo();
-    correo1.setAsunto("Oferta importante");
-    Correo correo2 = new Correo();
-    correo2.setAsunto("Notificación");
+        // Crear correos con diferentes asuntos
+        Correo correo1 = new Correo();
+        correo1.setAsunto("Oferta importante");
+        Correo correo2 = new Correo();
+        correo2.setAsunto("Notificación");
 
-    bandeja.agregarCorreoRecibido(correo1);
-    bandeja.agregarCorreoRecibido(correo2);
+        // Agregar correos a la bandeja de entrada
+        bandeja.agregarCorreoRecibido(correo1);
+        bandeja.agregarCorreoRecibido(correo2);
 
-    List<Correo> resultado = bandeja.filtrarCorreos(filtro.filtrarPorAsunto("Oferta")); // Usar la instancia de Filtros
+        // Filtrar por un asunto que no existe
+        List<Correo> resultado = bandeja.filtrarCorreos(filtro.filtrarPorAsunto("Reunión"));
 
-    // Aseguramos que el resultado sea incorrecto (esto hará que el test falle)
-    assertEquals(2, resultado.size()); // Se espera 2 correos, pero solo debería haber 1
-}
- */
+        // Aseguramos que el resultado sea vacío, ya que no debería haber ningún correo con ese asunto
+        assertEquals(0, resultado.size());
+    }
+}*/
 
     @Test
     public void filtrar_por_remitente_bandeja_de_entrada_Test() {
