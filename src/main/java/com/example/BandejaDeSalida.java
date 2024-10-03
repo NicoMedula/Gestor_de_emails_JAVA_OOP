@@ -24,5 +24,9 @@ public class BandejaDeSalida implements IBandeja{
                 .collect(Collectors.toList());
     }
 
+    public void borrarCorreo(Correo correo){
+        correosEnviados.remove(correo);
+    }
+
 }
 

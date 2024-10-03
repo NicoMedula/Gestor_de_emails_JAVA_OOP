@@ -27,5 +27,9 @@ public class BandejaDeEntrada implements IBandeja {
                 .filter(criterio)
                 .collect(Collectors.toList());
     }
+
+    public void borrarCorreo(Correo correo) {
+        correosRecibidos.remove(correo);
+    }
 }
 
