@@ -8,5 +8,7 @@ public interface IBandeja {
     public List<Correo> filtrarCorreos(Predicate<Correo> criterio);
     
     public void borrarCorreo(Correo correo);
+
+    public void marcarComoFavorito(Correo correo);
     
 }
