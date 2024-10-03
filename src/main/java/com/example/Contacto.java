@@ -27,6 +27,7 @@ public class Contacto extends Usuario {
     private String nombre;
     private String email;
     private BandejaDeEntrada bandejaDeEntrada;
+   
 
     //Expresion regular para verificar el email
     private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[a-z]{2,6}$";
@@ -39,6 +40,7 @@ public class Contacto extends Usuario {
         this.nombre=nombre;
         this.email=email;
         this.bandejaDeEntrada = new BandejaDeEntrada();
+        
     }
 
     //Retorna la lista de mail recibidos

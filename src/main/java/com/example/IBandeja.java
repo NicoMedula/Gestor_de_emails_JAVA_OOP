@@ -9,4 +9,5 @@ public interface IBandeja {
     
     public void borrarCorreo(Correo correo);
 
+    
 }

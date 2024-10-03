@@ -70,12 +70,14 @@ public class ContactoTest
     }
 
     @Test public void crear_1000_contactos_validos_Test(){
-
+        int count = 0;
         for(int i=0; i<1000; i++){
             Contacto c1 = new Contacto("Contacto " + i, "contacto" + i + "@example.com");
             assertEquals("contacto" + i + "@example.com", c1.getEmail());
+            count++;
         }
 
+        assertEquals(1000,count );
     }
 
     @Test
@@ -137,6 +139,9 @@ public class ContactoTest
         
         
         assertEquals(1, correo1.getDestinatarios().size());
+        assertEquals("Probando si funciona", correo1.getAsunto());
+        assertEquals("Este es un mensaje de prueba", correo1.getContenido());
+        assertEquals("nicolas2@hotmail.com", correo1.getRemitente().getEmail());
 
     }
 
@@ -233,7 +238,7 @@ public class ContactoTest
 
     @Test 
     public void verificar_que_el_mail_se_envia_y_se_almacena_en_bandeja_de_salida_Test(){
-
+        Usuario u1 = new Usuario();
         Contacto c1 = new Contacto("Nico", "nicolas@hotmail.com");
         Contacto c2 = new Contacto("Nico2", "nicolas2@hotmail.com");
         
@@ -244,11 +249,10 @@ public class ContactoTest
         correo1.setDestinatario(c1);
         correo1.setRemitente(c2);
 
-        Usuario u1 = new Usuario();
 
         u1.enviarCorreo(correo1);
         
-        assertEquals(1, u1.getBandejaDeSalida().size());
+        assertEquals(1, c2.getBandejaDeSalida().size());
         
     }
 
