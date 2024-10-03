@@ -252,7 +252,7 @@ public class ContactoTest
 
         u1.enviarCorreo(correo1);
         
-        assertEquals(1, c2.getBandejaDeSalida().size());
+        assertEquals(1, u1.getBandejaDeSalida().size());
         
     }
 
