@@ -11,6 +11,7 @@ public class BandejaDeEntrada implements IBandeja {
 
     public BandejaDeEntrada() {
         this.correosRecibidos = new ArrayList<>();
+        
     }
 
     public void agregarCorreoRecibido(Correo correo) {
