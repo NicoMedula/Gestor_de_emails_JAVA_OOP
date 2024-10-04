@@ -1,101 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.ContactoTest" time="0.381" tests="38" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.ContactoTest" time="0.064" tests="39" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="22"/>
-    <property name="sun.cpu.isalist" value="amd64"/>
-    <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\Home\Desktop\Prueba\Gestor_de_emails_JAVA_OOP\target\test-classes;C:\Users\Home\Desktop\Prueba\Gestor_de_emails_JAVA_OOP\target\classes;C:\Users\Home\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.0\junit-jupiter-api-5.9.0.jar;C:\Users\Home\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Home\.m2\repository\org\junit\platform\junit-platform-commons\1.9.0\junit-platform-commons-1.9.0.jar;C:\Users\Home\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Home\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.0\junit-jupiter-engine-5.9.0.jar;C:\Users\Home\.m2\repository\org\junit\platform\junit-platform-engine\1.9.0\junit-platform-engine-1.9.0.jar;"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/nicolasmedula/Desktop/Gestor de Mails/Gestor_de_emails_JAVA_OOP/target/test-classes:/Users/nicolasmedula/Desktop/Gestor de Mails/Gestor_de_emails_JAVA_OOP/target/classes:/Users/nicolasmedula/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.0/junit-jupiter-api-5.9.0.jar:/Users/nicolasmedula/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/nicolasmedula/.m2/repository/org/junit/platform/junit-platform-commons/1.9.0/junit-platform-commons-1.9.0.jar:/Users/nicolasmedula/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/nicolasmedula/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.0/junit-jupiter-engine-5.9.0.jar:/Users/nicolasmedula/.m2/repository/org/junit/platform/junit-platform-engine/1.9.0/junit-platform-engine-1.9.0.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
-    <property name="user.timezone" value="America/Buenos_Aires"/>
-    <property name="os.name" value="Windows 10"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="os.name" value="Mac OS X"/>
     <property name="java.vm.specification.version" value="22"/>
-    <property name="user.country" value="AR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.boot.library.path" value="C:\Users\Home\Desktop\jdk\Oracle_JDK-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\Home\AppData\Local\Temp\surefire10017562961831318390\surefirebooter9118785270222388327.jar C:\Users\Home\AppData\Local\Temp\surefire10017562961831318390 2024-10-03T09-38-39_224-jvmRun1 surefire2150007646812589231tmp surefire_015041889402618668486tmp"/>
+    <property name="user.country" value="AR"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/22.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/nicolasmedula/Desktop/Gestor de Mails/Gestor_de_emails_JAVA_OOP/target/surefire/surefirebooter18049238629737319275.jar /Users/nicolasmedula/Desktop/Gestor de Mails/Gestor_de_emails_JAVA_OOP/target/surefire 2024-10-03T22-52-48_870-jvmRun1 surefire1476810110895117083tmp surefire_012012958058102979505tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="com.example.ContactoTest"/>
-    <property name="surefire.test.class.path" value="C:\Users\Home\Desktop\Prueba\Gestor_de_emails_JAVA_OOP\target\test-classes;C:\Users\Home\Desktop\Prueba\Gestor_de_emails_JAVA_OOP\target\classes;C:\Users\Home\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.0\junit-jupiter-api-5.9.0.jar;C:\Users\Home\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Home\.m2\repository\org\junit\platform\junit-platform-commons\1.9.0\junit-platform-commons-1.9.0.jar;C:\Users\Home\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Home\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.0\junit-jupiter-engine-5.9.0.jar;C:\Users\Home\.m2\repository\org\junit\platform\junit-platform-engine\1.9.0\junit-platform-engine-1.9.0.jar;"/>
+    <property name="test" value="ContactoTest"/>
+    <property name="surefire.test.class.path" value="/Users/nicolasmedula/Desktop/Gestor de Mails/Gestor_de_emails_JAVA_OOP/target/test-classes:/Users/nicolasmedula/Desktop/Gestor de Mails/Gestor_de_emails_JAVA_OOP/target/classes:/Users/nicolasmedula/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.9.0/junit-jupiter-api-5.9.0.jar:/Users/nicolasmedula/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/nicolasmedula/.m2/repository/org/junit/platform/junit-platform-commons/1.9.0/junit-platform-commons-1.9.0.jar:/Users/nicolasmedula/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/nicolasmedula/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.9.0/junit-jupiter-engine-5.9.0.jar:/Users/nicolasmedula/.m2/repository/org/junit/platform/junit-platform-engine/1.9.0/junit-platform-engine-1.9.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\Home"/>
+    <property name="user.home" value="/Users/nicolasmedula"/>
     <property name="user.language" value="es"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2024-07-16"/>
-    <property name="java.home" value="C:\Users\Home\Desktop\jdk\Oracle_JDK-22"/>
-    <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\Home\Desktop\Prueba\Gestor_de_emails_JAVA_OOP"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/22.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/nicolasmedula/Desktop/Gestor de Mails/Gestor_de_emails_JAVA_OOP"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Home\AppData\Local\Temp\surefire10017562961831318390\surefirebooter9118785270222388327.jar"/>
-    <property name="user.script" value=""/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/nicolasmedula/Desktop/Gestor de Mails/Gestor_de_emails_JAVA_OOP/target/surefire/surefirebooter18049238629737319275.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="22.0.2+9-70"/>
-    <property name="user.name" value="Home"/>
-    <property name="stdout.encoding" value="Cp1252"/>
-    <property name="path.separator" value=";"/>
-    <property name="os.version" value="10.0"/>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="22.0.2"/>
+    <property name="user.name" value="nicolasmedula"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="14.4"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="maven.ext.class.path" value="C:\Users\Home\.vscode\extensions\oracle.oracle-java-22.1.2\nbcode\java\maven-nblib\netbeans-eventspy.jar"/>
-    <property name="localRepository" value="C:\Users\Home\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="java.io.tmpdir" value="C:\Users\Home\AppData\Local\Temp\"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/nicolasmedula/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/hq/hhfc8fjj0n34rykzpgmz2s8m0000gn/T/"/>
     <property name="java.version" value="22.0.2"/>
-    <property name="user.dir" value="C:\Users\Home\Desktop\Prueba\Gestor_de_emails_JAVA_OOP"/>
-    <property name="os.arch" value="amd64"/>
+    <property name="user.dir" value="/Users/nicolasmedula/Desktop/Gestor de Mails/Gestor_de_emails_JAVA_OOP"/>
+    <property name="os.arch" value="aarch64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="sun.os.patch.level" value=""/>
-    <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Users\Home\Desktop\jdk\Oracle_JDK-22\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Eclipse Adoptium\jdk-21.0.4.7-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-21.0.4.7-hotspot\bin;C:\Program Files\Java\jdk-1.8\bin;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Home;C:\Program Files\nodejs\;C:\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin;C:\Users\Home\AppData\Local\Microsoft\WindowsApps;C:\Users\Home\AppData\Roaming\npm;C:\Users\Home\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/nicolasmedula/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
-    <property name="stderr.encoding" value="Cp1252"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="22.0.2+9-70"/>
-    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="22.0.2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_fallido_Test" classname="com.example.ContactoTest" time="0.088"/>
-  <testcase name="crear_100_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.029"/>
-  <testcase name="crear_1000_contactos_validos_Test" classname="com.example.ContactoTest" time="0.056"/>
-  <testcase name="crear_correo_electronico_con_10_destinatario_Test" classname="com.example.ContactoTest" time="0.008"/>
+  <testcase name="filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_fallido_Test" classname="com.example.ContactoTest" time="0.015"/>
+  <testcase name="crear_100_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.005"/>
+  <testcase name="crear_1000_contactos_validos_Test" classname="com.example.ContactoTest" time="0.011"/>
+  <testcase name="crear_correo_electronico_con_10_destinatario_Test" classname="com.example.ContactoTest" time="0.003"/>
   <testcase name="filtro_por_contenido_bandeja_salida_Test_Fallido" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="filtro_por_contenido_bandeja_salida_Test" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="filtro_complejo_asunto_y_remitente_bandeja_de_entrada_fallido_Test" classname="com.example.ContactoTest" time="0.008"/>
-  <testcase name="crear_10_contactos_validados_correctamente_Test" classname="com.example.ContactoTest" time="0.01"/>
-  <testcase name="borrar_correo_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="crear_correo_electronico_con_10_destinatarios_invalidos_Test" classname="com.example.ContactoTest" time="0.003"/>
-  <testcase name="filtro_asunto_bandeja_salida_fallido_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="filtro_asunto_bandeja_salida_Test" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="filtro_por_destinatario_bandeja_salida_Test_Fallido" classname="com.example.ContactoTest" time="0.003"/>
-  <testcase name="filtro_complejo_asunto_remitente_y_contenido_fallido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.017"/>
+  <testcase name="filtro_por_contenido_bandeja_salida_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtro_complejo_asunto_y_remitente_bandeja_de_entrada_fallido_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="crear_10_contactos_validados_correctamente_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="borrar_correo_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="crear_correo_electronico_con_10_destinatarios_invalidos_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtro_asunto_bandeja_salida_fallido_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtro_asunto_bandeja_salida_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtro_por_destinatario_bandeja_salida_Test_Fallido" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtro_complejo_asunto_remitente_y_contenido_fallido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
   <testcase name="filtrar_por_destinatario_bandeja_de_entrada_fallido_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="crear_correo_electronico_con_100_destinatarios_Test" classname="com.example.ContactoTest" time="0.006"/>
-  <testcase name="verificar_que_el_mail_se_envia_y_se_almacena_en_bandeja_de_salida_Test" classname="com.example.ContactoTest" time="0.004"/>
-  <testcase name="varios_destinatarios_reciben_el_correo_en_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="enviar_mas_de_un_correo_y_que_se_almacene_bandeja_de_entrada_del_destinatario_y_bandeja_de_salida_del_remitente_Test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="crear_correo_electronico_con_las_propiedades_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="crear_correo_electronico_con_100_destinatarios_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="verificar_que_el_mail_se_envia_y_se_almacena_en_bandeja_de_salida_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="varios_destinatarios_reciben_el_correo_en_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="enviar_mas_de_un_correo_y_que_se_almacene_bandeja_de_entrada_del_destinatario_y_bandeja_de_salida_del_remitente_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="crear_correo_electronico_con_las_propiedades_Test" classname="com.example.ContactoTest" time="0.003"/>
   <testcase name="crear_un_contacto_invalido_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="filtro_complejo_asunto_remitente_y_contenido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.005"/>
+  <testcase name="filtro_complejo_asunto_remitente_y_contenido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
   <testcase name="borrar_correo_bandeja_de_salida_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="filtro_complejo_asunto_y_remitente_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="filtro_por_destinatario_bandeja_salida_Test" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="filtrar_por_asunto_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtro_complejo_asunto_y_remitente_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtro_por_destinatario_bandeja_salida_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtrar_por_asunto_bandeja_de_entrada_Test_Fallido" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtrar_por_asunto_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
   <testcase name="agregar_destinatario_test" classname="com.example.ContactoTest" time="0"/>
   <testcase name="filtrar_por_remitente_bandeja_de_entrada_Test_Fallido" classname="com.example.ContactoTest" time="0.001"/>
-  <testcase name="crear_correo_electronico_con_100_destinatarios_invalidos_Test" classname="com.example.ContactoTest" time="0.004"/>
-  <testcase name="crear_10_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="crear_correo_electronico_con_100_destinatarios_invalidos_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="crear_10_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0"/>
   <testcase name="filtrar_por_remitente_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="filtrar_por_destinatario_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.007"/>
-  <testcase name="filtrar_por_contenido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="crear_1000_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.039"/>
-  <testcase name="crear_un_contacto_correctamente_Test" classname="com.example.ContactoTest" time="0.002"/>
-  <testcase name="filtrar_por_contenido_bandeja_de_entrada_Test_Fallido" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
-  <testcase name="crear_100_contactos_validos_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtrar_por_destinatario_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtrar_por_contenido_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="crear_1000_contactos_invalidos_Test" classname="com.example.ContactoTest" time="0.005"/>
+  <testcase name="crear_un_contacto_correctamente_Test" classname="com.example.ContactoTest" time="0"/>
+  <testcase name="filtrar_por_contenido_bandeja_de_entrada_Test_Fallido" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_Test" classname="com.example.ContactoTest" time="0.001"/>
+  <testcase name="crear_100_contactos_validos_Test" classname="com.example.ContactoTest" time="0.003"/>
 </testsuite>

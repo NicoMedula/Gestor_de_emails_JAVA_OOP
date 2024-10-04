@@ -238,7 +238,7 @@ public class ContactoTest
 
     @Test 
     public void verificar_que_el_mail_se_envia_y_se_almacena_en_bandeja_de_salida_Test(){
-        Usuario u1 = new Usuario();
+        
         Contacto c1 = new Contacto("Nico", "nicolas@hotmail.com");
         Contacto c2 = new Contacto("Nico2", "nicolas2@hotmail.com");
         
@@ -250,10 +250,10 @@ public class ContactoTest
         correo1.setRemitente(c2);
 
 
-        u1.enviarCorreo(correo1);
+        c2.enviarCorreo(correo1);
         
-        assertEquals(1, u1.getBandejaDeSalida().size());
-        assertEquals(correo1, u1.getBandejaDeSalida().get(0));
+        assertEquals(1, c2.getBandejaDeSalida().size());
+        assertEquals(correo1, c2.getBandejaDeSalida().get(0));
         
     }
 
@@ -279,8 +279,7 @@ public class ContactoTest
         correo.agregarDestinatario(destinatario3);
 
         // Enviar correo
-        Usuario usuarioRemitente = new Usuario();
-        usuarioRemitente.enviarCorreo(correo);
+        remitente.enviarCorreo(correo);
 
         //Prueba si se creo correctamente el correo
         assertEquals("Asunto de prueba", correo.getAsunto());
@@ -290,8 +289,8 @@ public class ContactoTest
         
 
         // Verifica que el correo esté en la bandeja de salida del remitente
-        assertEquals(1, usuarioRemitente.getBandejaDeSalida().size());
-        assertEquals(correo, usuarioRemitente.getBandejaDeSalida().get(0));
+        assertEquals(1, remitente.getBandejaDeSalida().size());
+        assertEquals(correo, remitente.getBandejaDeSalida().get(0));
 
         // Verificar que cada destinatario haya recibido el correo en su bandeja de entrada
         assertEquals(1, destinatario1.getBandejaDeEntrada().getCorreosRecibidos().size());
