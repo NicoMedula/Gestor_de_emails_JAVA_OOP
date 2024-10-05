@@ -54,6 +54,7 @@ public class Correo {
         correoNuevo.setAsunto(this.getAsunto());
         correoNuevo.setContenido(this.getContenido());
         correoNuevo.setRemitente(this.getRemitente());
+        //correoNuevo.setDestinatario(this.getDestinatarios());
 
         return correoNuevo;
     }

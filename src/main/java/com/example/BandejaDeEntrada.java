@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class BandejaDeEntrada implements IFiltrar, IBorrarCorreo{
+public class BandejaDeEntrada extends Bandeja
+             implements IFiltrar, IBorrarCorreo{
 
     private List<Correo> correosRecibidos;
 
@@ -23,7 +24,7 @@ public class BandejaDeEntrada implements IFiltrar, IBorrarCorreo{
     }
 
     // Método para aplicar filtros
-    public List<Correo> filtrarCorreos(Predicate<Correo> criterio) {
+    public List<Correo> filtrar(Predicate<Correo> criterio) {
         return correosRecibidos.stream()
                 .filter(criterio)
                 .collect(Collectors.toList());

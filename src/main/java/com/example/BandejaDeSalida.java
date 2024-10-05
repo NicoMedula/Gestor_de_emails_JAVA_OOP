@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class BandejaDeSalida implements IFiltrar,IBorrarCorreo{
+public class BandejaDeSalida extends Bandeja 
+                implements IFiltrar,IBorrarCorreo{
+                    
     private  List<Correo> correosEnviados = new ArrayList<>();
 
     /* agrega el correo enviado */
@@ -18,7 +20,7 @@ public class BandejaDeSalida implements IFiltrar,IBorrarCorreo{
     }
 
     //Metodo para aplicar filtros
-    public List<Correo> filtrarCorreos(Predicate<Correo> criterio) {
+    public List<Correo> filtrar(Predicate<Correo> criterio) {
         return correosEnviados.stream()
                 .filter(criterio)
                 .collect(Collectors.toList());
