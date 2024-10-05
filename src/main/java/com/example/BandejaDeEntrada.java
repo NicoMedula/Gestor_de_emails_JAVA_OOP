@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class BandejaDeEntrada extends Bandeja
-             implements IFiltrar, IBorrarCorreo{
+         implements IFiltrar, IBorrarCorreo{
 
     private List<Correo> correosRecibidos;
 
