@@ -7,14 +7,19 @@ public class Correo {
     private String asunto;
     private String contenido;
     private Contacto remitente;
-    private ArrayList<Contacto> destinatario = new ArrayList<>();
+    private ArrayList<Contacto> destinatarios = new ArrayList<>();
 
-    public void agregarDestinatario(Contacto destinatario){
-        // Agrega un nuevo destinatario al correo
-        this.destinatario.add(destinatario);
-        
+    // Agrega un nuevo destinatario al correo
+    public void setDestinatarios(Contacto destinatario){
+        this.destinatarios.add(destinatario);
     }
-    
+     public ArrayList<Contacto> getDestinatarios(){
+        return destinatarios; // Devuelve la lista de destinatarios
+    }
+
+   public void setListaDestinatarios(ArrayList<Contacto> destinatarios){
+        destinatarios = getDestinatarios();
+   }
 
     public String getContenido(){
         return contenido;
@@ -22,14 +27,6 @@ public class Correo {
 
     public void setContenido(String contenido){
         this.contenido = contenido;
-    }
-
-    public void setDestinatario(Contacto contacto){
-        destinatario.add(contacto);
-    }
-
-    public ArrayList<Contacto> getDestinatarios(){
-        return destinatario; // Devuelve la lista de destinatarios
     }
 
     public void setAsunto(String asunto){
@@ -54,8 +51,10 @@ public class Correo {
         correoNuevo.setAsunto(this.getAsunto());
         correoNuevo.setContenido(this.getContenido());
         correoNuevo.setRemitente(this.getRemitente());
+        correoNuevo.setListaDestinatarios(this.getDestinatarios());
         
         return correoNuevo;
     }
+    
     
 }

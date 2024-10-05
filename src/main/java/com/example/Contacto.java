@@ -22,7 +22,7 @@ D - Principio de Inversión de Dependencias (Dependency Inversion Principle)
 
 */ 
 
-public class Contacto extends Usuario {
+public class Contacto extends Casilla {
 
     private String nombre;
     private String email;

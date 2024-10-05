@@ -5,14 +5,10 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class BandejaDeSalida extends Bandeja 
-                implements IFiltrar,IBorrarCorreo{
+                implements IFiltrarCorreos,IBorrarCorreo{
                     
     private  List<Correo> correosEnviados = new ArrayList<>();
 
-    /* agrega el correo enviado */
-    public void enviarCorreo(Correo correo) {
-        correosEnviados.add(correo);
-    }
 
     /* retorna la lista de correos enviados */
     public List<Correo> getCorreosEnviados() {

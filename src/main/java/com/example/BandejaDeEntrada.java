@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class BandejaDeEntrada extends Bandeja
-         implements IFiltrar, IBorrarCorreo{
+         implements IFiltrarCorreos, IBorrarCorreo{
 
     private List<Correo> correosRecibidos;
 
@@ -30,9 +30,6 @@ public class BandejaDeEntrada extends Bandeja
                 .collect(Collectors.toList());
     }
 
-    public void borrarCorreo(Correo correo) {
-        correosRecibidos.remove(correo);
-    }
     
 }
 
