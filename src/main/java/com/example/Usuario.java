@@ -12,11 +12,11 @@ public class Usuario {
 
     public void enviarCorreo(Correo correo){
         //Agrega el correo a la lista de correos enviados del remitente
-        bandejaEnviado.enviarCorreo(correo);
+        bandejaEnviado.enviarCorreo(correo.clonar());
 
         //Agrega los correos a la bandeja de entrada de los destinatarios
         for (Contacto destinatario : correo.getDestinatarios()) {
-            destinatario.getBandejaDeEntrada().agregarCorreoRecibido(correo);
+            destinatario.getBandejaDeEntrada().agregarCorreoRecibido(correo.clonar());
         }
 
     }

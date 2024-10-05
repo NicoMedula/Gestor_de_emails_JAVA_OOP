@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class BandejaDeSalida implements IBandeja{
+public class BandejaDeSalida implements IFiltrar,IBorrarCorreo{
     private  List<Correo> correosEnviados = new ArrayList<>();
 
     /* agrega el correo enviado */

@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-public class BandejaDeEntrada implements IBandeja {
+public class BandejaDeEntrada implements IFiltrar, IBorrarCorreo{
 
-    private final List<Correo> correosRecibidos;
+    private List<Correo> correosRecibidos;
 
     public BandejaDeEntrada() {
         this.correosRecibidos = new ArrayList<>();

@@ -46,5 +46,16 @@ public class Correo {
     public Contacto getRemitente(){
         return remitente;
     }
+
+
+    public Correo clonar() {
+        var correoNuevo = new Correo();
+
+        correoNuevo.setAsunto(this.getAsunto());
+        correoNuevo.setContenido(this.getContenido());
+        correoNuevo.setRemitente(this.getRemitente());
+
+        return correoNuevo;
+    }
     
 }
