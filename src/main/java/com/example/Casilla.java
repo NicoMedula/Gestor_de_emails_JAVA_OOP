@@ -4,30 +4,30 @@ import java.util.List;
 
 public class Casilla {
     
-    private BandejaDeSalida bandejaEnviado;
-    private BandejaDeEntrada bandejaRecibido;
+    private Bandeja bandeja;
     
 
     public Casilla() {
-        this.bandejaEnviado = new BandejaDeSalida();
+        this.bandeja = new Bandeja();
     }
 
     public void enviarCorreo(Correo correo){
 
-        Correo correoClon = correo.clonar();
+         // Clonar el correo antes de enviarlo para que no se vean afectados por cambios posteriores
+         Correo correoClon = correo.clonar();
 
-        //Agrega el correo a la lista de correos enviados del remitente
-        bandejaEnviado.setCorreoEnviado(correoClon);
-
-        //Agrega los correos a la bandeja de entrada de los destinatarios
-        for (Contacto destinatario : correo.getDestinatarios()) {
-            destinatario.getBandejaDeEntrada().setCorreoRecibido(correoClon);
-        }
+         // Agregar el correo a la bandeja de salida del remitente
+         this.bandeja.agregarCorreoEnviado(correoClon);
+ 
+         // Agregar el correo a la bandeja de entrada de cada destinatario
+         for (Contacto destinatario : correoClon.getDestinatarios()) {
+             destinatario.getBandeja().agregarCorreoRecibido(correoClon);
+         }
 
     }
 
     public List<Correo> getBandejaDeSalida(){
-        return bandejaEnviado.getCorreosEnviados();
+        return bandeja.getCorreosEnviados();
     }
     
 }

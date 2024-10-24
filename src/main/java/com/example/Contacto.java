@@ -26,7 +26,7 @@ public class Contacto extends Casilla {
 
     private String nombre;
     private String email;
-    private BandejaDeEntrada bandejaDeEntrada;
+    private Bandeja bandeja;
    
 
     //Expresion regular para verificar el email
@@ -39,15 +39,14 @@ public class Contacto extends Casilla {
         }
         this.nombre=nombre;
         this.email=email;
-        this.bandejaDeEntrada = new BandejaDeEntrada();
+        this.bandeja = new Bandeja(); 
         
     }
 
     //Retorna la lista de mail recibidos
-    public BandejaDeEntrada getBandejaDeEntrada(){
-        return bandejaDeEntrada;
+    public Bandeja getBandeja(){
+        return bandeja;
     }
-
     
     //Metodo que valida el email
     private boolean esEmailValido(String email) {

@@ -17,8 +17,8 @@ public class Correo {
         return destinatarios; // Devuelve la lista de destinatarios
     }
 
-   public void setListaDestinatarios(ArrayList<Contacto> destinatarios){
-        destinatarios = getDestinatarios();
+   public void agregarDestinatarios(Contacto destinatario){
+        this.destinatarios.add(destinatario);
    }
 
     public String getContenido(){
@@ -51,7 +51,7 @@ public class Correo {
         correoNuevo.setAsunto(this.getAsunto());
         correoNuevo.setContenido(this.getContenido());
         correoNuevo.setRemitente(this.getRemitente());
-        correoNuevo.setListaDestinatarios(this.getDestinatarios());
+        correoNuevo.destinatarios = new ArrayList<>(this.destinatarios);
         
         return correoNuevo;
     }

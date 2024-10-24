@@ -4,3 +4,4 @@ public interface IBorrarCorreo {
     
     void borrarCorreo(Correo correo);
 }
+ 

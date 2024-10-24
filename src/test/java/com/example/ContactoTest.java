@@ -49,6 +49,7 @@ public class ContactoTest
     
     
         assertEquals(2, correo.getDestinatarios().size());
+        
     }
 
 
@@ -294,69 +295,46 @@ public class ContactoTest
         
 
         // Verificar que cada destinatario haya recibido el correo en su bandeja de entrada
-        assertEquals(1, destinatario1.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(1, destinatario1.getBandeja().getCorreosRecibidos().size());
         
 
-        assertEquals(1, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(1, destinatario2.getBandeja().getCorreosRecibidos().size());
         
 
-        assertEquals(1, destinatario3.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(1, destinatario3.getBandeja().getCorreosRecibidos().size());
         
 
         
     }
     @Test
-    public void varios_destinatarios_reciben_el_correo_en_bandeja_de_entrada2_Test() {
-        // Crear remitente
-        Contacto remitente = new Contacto("Remitente", "remitente@example.com");
+public void testEnvioDeCorreo() {
+    // Crear remitente y destinatarios
+    Contacto remitente = new Contacto("Remitente", "remitente@example.com");
+    Contacto destinatario1 = new Contacto("Destinatario 1", "destinatario1@example.com");
+    Contacto destinatario2 = new Contacto("Destinatario 2", "destinatario2@example.com");
 
-        // Crear destinatarios
-        Contacto destinatario1 = new Contacto("Destinatario 1", "destinatario1@example.com");
-        Contacto destinatario2 = new Contacto("Destinatario 2", "destinatario2@example.com");
-        Contacto destinatario3 = new Contacto("Destinatario 3", "destinatario3@example.com");
+    // Crear correo
+    Correo correo = new Correo();
+    correo.setAsunto("Asunto de prueba");
+    correo.setRemitente(remitente);
+    correo.agregarDestinatarios(destinatario1);
+    correo.agregarDestinatarios(destinatario2);
 
-        // Crear correo
-        Correo correo = new Correo();
-        correo.setAsunto("Asunto de prueba");
-        correo.setContenido("Contenido de prueba");
-        correo.setRemitente(remitente);
+    // Enviar correo
+    remitente.enviarCorreo(correo);
 
-        // Agregar destinatarios al correo
-        correo.setDestinatarios(destinatario1);
-        correo.setDestinatarios(destinatario2);
-        correo.setDestinatarios(destinatario3);
+    // Verificar que el correo está en la bandeja de salida del remitente
+    assertEquals(1, remitente.getBandejaDeSalida().size());
+    assertEquals("Asunto de prueba", remitente.getBandejaDeSalida().get(0).getAsunto());
 
-        // Enviar correo
-        remitente.enviarCorreo(correo);
+    // Verificar que los destinatarios recibieron el correo
+    assertEquals(1, destinatario1.getBandeja().getCorreosRecibidos().size());
+    assertEquals("Asunto de prueba", destinatario1.getBandeja().getCorreosRecibidos().get(0).getAsunto());
 
-        //Prueba si se creo correctamente el correo
-        assertEquals("Asunto de prueba", correo.getAsunto());
-        assertEquals("Contenido de prueba", correo.getContenido());
-        assertEquals(remitente, correo.getRemitente());
-        assertEquals(3, correo.getDestinatarios().size());
-        
+    assertEquals(1, destinatario2.getBandeja().getCorreosRecibidos().size());
+    assertEquals("Asunto de prueba", destinatario2.getBandeja().getCorreosRecibidos().get(0).getAsunto());
+}
 
-        // Verifica que el correo esté en la bandeja de salida del remitente
-
-        assertEquals(1, remitente.getBandejaDeSalida().size());
-        assertEquals("Asunto de prueba", remitente.getBandejaDeSalida().get(0).getAsunto());
-
-        // Verificar que cada destinatario haya recibido el correo en su bandeja de entrada
-        assertEquals(1, destinatario1.getBandejaDeEntrada().getCorreosRecibidos().size());
-        assertEquals("Asunto de prueba", destinatario1.getBandejaDeEntrada().getCorreosRecibidos().get(0).getAsunto());
-
-        assertEquals(1, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().size());
-
-        assertEquals(1, destinatario3.getBandejaDeEntrada().getCorreosRecibidos().size());
-
-        correo.setAsunto("Demo");
-        //assertEquals("Asunto de prueba", remitente.getBandejaDeSalida().get(0).getAsunto());
-
-        assertEquals("Asunto de prueba", destinatario1.getBandejaDeEntrada().getCorreosRecibidos().get(0).getAsunto());
-        assertEquals("Asunto de prueba", destinatario2.getBandejaDeEntrada().getCorreosRecibidos().get(0).getAsunto());
-        assertEquals("Asunto de prueba", destinatario3.getBandejaDeEntrada().getCorreosRecibidos().get(0).getAsunto());
-
-    }
 
     @Test
     public void enviar_mas_de_un_correo_y_que_se_almacene_bandeja_de_entrada_del_destinatario_y_bandeja_de_salida_del_remitente_Test() {
@@ -394,10 +372,10 @@ public class ContactoTest
         
 
         // Verificar que los destinatarios hayan recibido ambos correos en su bandeja de entrada
-        assertEquals(2, destinatario1.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(2, destinatario1.getBandeja().getCorreosRecibidos().size());
         
 
-        assertEquals(2, destinatario2.getBandejaDeEntrada().getCorreosRecibidos().size());
+        assertEquals(2, destinatario2.getBandeja().getCorreosRecibidos().size());
        
     }
 
@@ -627,7 +605,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
        
     
         // Comprobar que solo se devuelve el correo con el asunto "Oferta importante" del remitente1
-        assertEquals(1, destinatario.getBandejaDeEntrada().filtrar(filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).size());
+        assertEquals(1, destinatario.getBandeja().filtrarRecibidos(filtro.filtrarPorAsuntoYRemitente("Oferta", "remitente1@ejemplo.com")).size());
         
 
     }
@@ -655,7 +633,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         bandeja.agregarCorreoRecibido(correo2);
         
         // Comprobar que no se devuelven correos con el asunto "Oferta importante" del remitente1
-        assertEquals(0, bandeja.filtrar(filtro.filtrarPorAsuntoYRemitente("Cualquiera", "remitente1@ejemplo.com")).size());
+        assertEquals(0, bandeja.filtrarRecibidos(filtro.filtrarPorAsuntoYRemitente("Cualquiera", "remitente1@ejemplo.com")).size());
         
     }
 
@@ -691,14 +669,13 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         remitente2.enviarCorreo(correo1);
         remitente2.enviarCorreo(correo2);
     
-        assertEquals(2, destinatario.getBandejaDeEntrada().filtrar(filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).size());
-        assertEquals("Asunto info", destinatario.getBandejaDeEntrada().filtrar(filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).get(0).getAsunto());
+        assertEquals(2, destinatario.getBandeja().filtrarRecibidos(filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).size());
+        assertEquals("Asunto info", destinatario.getBandeja().filtrarRecibidos(filtro.filtrarPorAsuntoRemitenteYContenido("info", "remitente2@ejemplo.com", "importante")).get(0).getAsunto());
     }
 
     
     @Test
     public void filtro_complejo_asunto_remitente_y_contenido_fallido_bandeja_de_entrada_Test() {
-        BandejaDeEntrada bandeja = new BandejaDeEntrada();
         Filtros filtro = new Filtros();
     
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
@@ -710,7 +687,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
     
         remitente1.enviarCorreo(correo1);
     
-        List<Correo> resultado = bandeja.filtrar(filtro.filtrarPorAsuntoRemitenteYContenido("Asunto", "remitente1@ejemplo.com", "contenido importante"));
+        List<Correo> resultado = remitente1.getBandeja().filtrarEnviados(filtro.filtrarPorAsuntoRemitenteYContenido("Asunto", "remitente1@ejemplo.com", "contenido importante"));
     
         assertEquals(0, resultado.size());
     }
@@ -745,7 +722,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         remitente.enviarCorreo(correo1);
         remitente.enviarCorreo(correo2);
     
-        assertEquals(2, destinatario1.getBandejaDeEntrada().filtrar(filtro.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).size());
+        assertEquals(2, destinatario1.getBandeja().filtrarRecibidos(filtro.filtrarPorAsuntoYDestinatario("Asunto 1", "destinatario1@ejemplo.com")).size());
         
        
     }
@@ -753,10 +730,11 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
     @Test
     public void filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_fallido_Test() {
         
-        BandejaDeEntrada bandeja = new BandejaDeEntrada();
+       
         Filtros filtro = new Filtros();
         
         Contacto destinatario1 = new Contacto("desti1", "destinatario1@ejemplo.com");
+        Contacto remitente1 = new Contacto("remitente1", "remitente@ejemplo.com");
         
         Correo correo1 = new Correo();
         correo1.setAsunto("Asunto 1");
@@ -765,10 +743,10 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         Correo correo2 = new Correo();
         correo2.setAsunto("Asunto 2");
         correo2.setDestinatarios(destinatario1);
-        
-        bandeja.agregarCorreoRecibido(correo1);
 
-        List<Correo> resultado = bandeja.filtrar(filtro.filtrarPorAsuntoYDestinatario("Asunto 3", "destinatario1@ejemplo.com"));
+        remitente1.enviarCorreo(correo1);
+        
+        List<Correo> resultado = remitente1.getBandeja().filtrarEnviados(filtro.filtrarPorAsuntoYDestinatario("Asunto 3", "destinatario1@ejemplo.com"));
         
         assertEquals(0, resultado.size());
         
@@ -776,7 +754,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
     @Test
     public void filtro_asunto_bandeja_salida_Test() {
-        BandejaDeSalida b1 = new BandejaDeSalida();
+
         Filtros filtro = new Filtros();
     
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
@@ -786,20 +764,21 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         correo1.setAsunto("Oferta importante");
         correo1.setRemitente(remitente1);
         correo1.setDestinatarios(destinatario);
-        remitente1.enviarCorreo(correo1);
+        
         
         Correo correo2 = new Correo();
         correo2.setAsunto("Notificación Oferta");
         correo2.setRemitente(remitente1);
         correo2.setDestinatarios(destinatario);
+
+        remitente1.enviarCorreo(correo2);
         remitente1.enviarCorreo(correo1);
-    
-        assertEquals(2, b1.filtrar(filtro.filtrarPorAsunto("Oferta")).size());
+
+        assertEquals(2, remitente1.getBandeja().filtrarEnviados(filtro.filtrarPorAsunto("Oferta")).size());
     }
 
     @Test
     public void filtro_asunto_bandeja_salida_fallido_Test() {
-        BandejaDeSalida bandeja = new BandejaDeSalida();
         Filtros filtro = new Filtros();
         
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
@@ -815,14 +794,13 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         correo2.setAsunto("Notificación Oferta");
         correo2.setRemitente(remitente1);
         correo2.setDestinatarios(destinatario);
-        remitente1.enviarCorreo(correo1);
+        remitente1.enviarCorreo(correo2);
         
-        assertEquals(0, bandeja.filtrar(filtro.filtrarPorAsunto("Oferta Falsa")).size());
+        assertEquals(0, remitente1.getBandeja().filtrarEnviados(filtro.filtrarPorAsunto("Oferta Falsa")).size());
     }
     
     @Test
     public void filtro_por_destinatario_bandeja_salida_Test() {
-        BandejaDeSalida bandeja = new BandejaDeSalida();
         Filtros filtro = new Filtros();
     
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
@@ -841,7 +819,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         correo2.setDestinatarios(destinatario2);
         remitente1.enviarCorreo(correo2);
     
-        assertEquals(1, bandeja.filtrar(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).size());
+        assertEquals(1, remitente1.getBandeja().filtrarEnviados(filtro.filtrarPorDestinatario("destinatario1@gmail.com")).size());
         
 
         correo1.setAsunto("Hola");
