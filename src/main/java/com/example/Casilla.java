@@ -11,19 +11,8 @@ public class Casilla {
         this.bandeja = new Bandeja();
     }
 
-    public void enviarCorreo(Correo correo){
-
-         // Clonar el correo antes de enviarlo para que no se vean afectados por cambios posteriores
-         Correo correoClon = correo.clonar();
-
-         // Agregar el correo a la bandeja de salida del remitente
-         this.bandeja.agregarCorreoEnviado(correoClon);
- 
-         // Agregar el correo a la bandeja de entrada de cada destinatario
-         for (Contacto destinatario : correoClon.getDestinatarios()) {
-             destinatario.getBandeja().agregarCorreoRecibido(correoClon);
-         }
-
+    public Bandeja getBandeja(){
+        return bandeja;
     }
 
     public List<Correo> getBandejaDeSalida(){

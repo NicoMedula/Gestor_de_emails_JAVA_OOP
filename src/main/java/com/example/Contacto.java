@@ -22,11 +22,13 @@ D - Principio de Inversión de Dependencias (Dependency Inversion Principle)
 
 */ 
 
-public class Contacto extends Casilla {
+public class Contacto {
 
     private String nombre;
     private String email;
     private Bandeja bandeja;
+
+    private Casilla casilla;
    
 
     //Expresion regular para verificar el email
@@ -40,13 +42,29 @@ public class Contacto extends Casilla {
         this.nombre=nombre;
         this.email=email;
         this.bandeja = new Bandeja(); 
+        this.casilla =  new Casilla();
         
     }
 
     //Retorna la lista de mail recibidos
     public Bandeja getBandeja(){
-        return bandeja;
+        return casilla.getBandeja();
     }
+
+    public void enviarCorreo(Correo correo){
+
+        // Clonar el correo antes de enviarlo para que no se vean afectados por cambios posteriores
+        Correo correoClon = correo.clonar();
+
+        // Agregar el correo a la bandeja de salida del remitente
+        casilla.getBandeja().agregarCorreoEnviado(correoClon);
+
+        // Agregar el correo a la bandeja de entrada de cada destinatario
+        for (Contacto destinatario : correoClon.getDestinatarios()) {
+            destinatario.getBandeja().agregarCorreoRecibido(correoClon);
+        }
+
+   }
     
     //Metodo que valida el email
     private boolean esEmailValido(String email) {

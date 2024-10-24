@@ -2,6 +2,7 @@ package com.example;
 import java.util.ArrayList;
 
 
+
 public class Correo {
     
     private String asunto;
@@ -9,10 +10,12 @@ public class Correo {
     private Contacto remitente;
     private ArrayList<Contacto> destinatarios = new ArrayList<>();
 
+
+
+    
+
     // Agrega un nuevo destinatario al correo
-    public void setDestinatarios(Contacto destinatario){
-        this.destinatarios.add(destinatario);
-    }
+    
      public ArrayList<Contacto> getDestinatarios(){
         return destinatarios; // Devuelve la lista de destinatarios
     }
