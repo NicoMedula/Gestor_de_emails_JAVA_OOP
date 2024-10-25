@@ -750,8 +750,11 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
         correo1.setAsunto("Hola");
 
-        assertEquals("Asunto 1",correo1.getAsunto() );
+        assertEquals("Hola",correo1.getAsunto() );
 
+        //Se verifica que tengan el clon del correo
+        assertEquals("Asunto 1", destinatario1.getBandeja().getCorreosRecibidos().get(0).getAsunto());
+        assertEquals("Asunto 1", remitente1.getBandeja().getCorreosEnviados().get(0).getAsunto());
     }
 
     @Test
@@ -889,13 +892,14 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
         
 
         destinatario1.getBandeja().borrarCorreoRecibido(correo1);
-        destinatario2.getBandeja().borrarCorreoRecibido(correo5);
+        destinatario1.getBandeja().borrarCorreoRecibido(correo5);
         destinatario1.getBandeja().borrarCorreoRecibido(correo3);
-        destinatario1.getBandeja().borrarCorreoRecibido(correo2);
+        destinatario2.getBandeja().borrarCorreoRecibido(correo2);
         
         
-
-        assertEquals(1, destinatario1.getBandeja().filtrarRecibidos(filtro.filtrarPorRemitente("remitente1@ejemplo.com")).size());
+        assertEquals("Asunto 4", destinatario1.getBandeja().getCorreosRecibidos().get(0).getAsunto());
+        assertEquals(1, destinatario1.getBandeja().getCorreosRecibidos().size());
+        
         
         
     }
