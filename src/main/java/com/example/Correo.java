@@ -88,6 +88,17 @@ public class Correo {
         
         return correoNuevo;
     }
+
+    public void agregarDestinatariosDeGrupo(GrupoContactos grupo) {
+
+        for (Contacto destinatario : grupo.getMiembros()) {
+
+            if (!destinatarios.contains(destinatario)) {
+                destinatarios.add(destinatario);
+            }
+            
+        }
+    }
     
     
 }

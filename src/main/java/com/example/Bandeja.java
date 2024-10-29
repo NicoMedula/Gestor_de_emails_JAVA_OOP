@@ -9,6 +9,28 @@ public class Bandeja {
     
     private List<Correo> correosRecibidos = new ArrayList<>();
     private List<Correo> correosEnviados = new ArrayList<>();
+    private List<Correo> correosFavoritos = new ArrayList<>();
+
+    // Métodos para agregar correos favoritos
+    public void agregarCorreoFavorito(Correo correo) {
+        if (!correosFavoritos.contains(correo)){// Evita duplicados en la lista de correos favoritos
+            correosFavoritos.add(correo);
+        }   
+    }
+
+    public void agregarAFavoritos(Correo correo) {
+        if (!correosFavoritos.contains(correo)) {
+            correosFavoritos.add(correo);
+        }
+    }
+
+    public void eliminarDeFavoritos(Correo correo) {
+        correosFavoritos.remove(correo);
+    }
+
+    public List<Correo> getCorreosFavoritos() {
+        return new ArrayList<>(correosFavoritos);
+    }
 
     // Métodos para agregar correos
     public void agregarCorreoRecibido(Correo correo) {
