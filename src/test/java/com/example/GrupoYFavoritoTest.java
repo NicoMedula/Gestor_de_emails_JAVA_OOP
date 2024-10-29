@@ -17,21 +17,25 @@ public class GrupoYFavoritoTest {
 
         grupo.agregarMiembro(destinatario1);
         grupo.agregarMiembro(destinatario2);
+        
+        
 
         Correo correoGrupal = new Correo();
         correoGrupal.setAsunto("Correo grupal");
         correoGrupal.setContenido("Contenido para el grupo");
         correoGrupal.setRemitente(remitente);
-        correoGrupal.agregarDestinatariosDeGrupo(grupo);
+        correoGrupal.agregarDestinatarios(grupo);
 
         remitente.enviarCorreo(correoGrupal);
 
         assertEquals(1, destinatario1.getBandeja().getCorreosRecibidos().size());
         assertEquals(1, destinatario2.getBandeja().getCorreosRecibidos().size());
+        
         assertEquals(1, grupo.getPropietario().getBandeja().getCorreosEnviados().size());
         assertEquals("Correo grupal", grupo.getPropietario().getBandeja().getCorreosEnviados().get(0).getAsunto());
         assertEquals("Contenido para el grupo", grupo.getPropietario().getBandeja().getCorreosEnviados().get(0).getContenido());
         assertEquals(remitente, grupo.getPropietario().getBandeja().getCorreosEnviados().get(0).getRemitente());
+        assertEquals("Trabajo", grupo.getNombre());
     }
 
     @Test

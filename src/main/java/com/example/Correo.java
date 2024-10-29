@@ -50,6 +50,7 @@ public class Correo {
         return destinatarios; // Devuelve la lista de destinatarios
     }
 
+    
    public void agregarDestinatarios(Contacto destinatario){
         this.destinatarios.add(destinatario);
    }
@@ -89,7 +90,8 @@ public class Correo {
         return correoNuevo;
     }
 
-    public void agregarDestinatariosDeGrupo(GrupoContactos grupo) {
+   
+    public void agregarDestinatarios(GrupoContactos grupo) {
 
         for (Contacto destinatario : grupo.getMiembros()) {
 
