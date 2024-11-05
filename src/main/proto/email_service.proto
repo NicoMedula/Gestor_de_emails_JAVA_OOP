@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.email";
+option java_outer_classname = "EmailServiceProto";
+
+package email;
+
+// Definición del servicio
+service EmailService {
+  rpc SendEmail (EmailRequest) returns (EmailResponse);
+  rpc GetEmails (GetEmailsRequest) returns (stream EmailResponse);
+}
+
+// Definición de los mensajes
+message EmailRequest {
+  string from = 1;
+  string to = 2;
+  string subject = 3;
+  string body = 4;
+  
+}
+
+message EmailResponse {
+    bool success = 1;
+    string message = 2;
+    string from = 3;
+    string subject = 4;
+    string body = 5;
+}
+
+message GetEmailsRequest {
+  string user = 1;
+}

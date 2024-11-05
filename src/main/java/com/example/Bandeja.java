@@ -6,18 +6,12 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Bandeja {
-    
+
     private List<Correo> correosRecibidos = new ArrayList<>();
     private List<Correo> correosEnviados = new ArrayList<>();
     private List<Correo> correosFavoritos = new ArrayList<>();
 
     // Métodos para agregar correos favoritos
-    public void agregarCorreoFavorito(Correo correo) {
-        if (!correosFavoritos.contains(correo)){// Evita duplicados en la lista de correos favoritos
-            correosFavoritos.add(correo);
-        }   
-    }
-
     public void agregarAFavoritos(Correo correo) {
         if (!correosFavoritos.contains(correo)) {
             correosFavoritos.add(correo);
@@ -43,27 +37,30 @@ public class Bandeja {
 
     // Métodos para obtener correos
     public List<Correo> getCorreosRecibidos() {
-        return correosRecibidos;
+        return new ArrayList<>(correosRecibidos);
     }
 
     public List<Correo> getCorreosEnviados() {
-        return correosEnviados;
+        return new ArrayList<>(correosEnviados);
     }
 
-    // Método para aplicar filtros
+    // Métodos para aplicar filtros
     public List<Correo> filtrarRecibidos(Predicate<Correo> criterio) {
-        return correosRecibidos.stream()
-                .filter(criterio)
-                .collect(Collectors.toList());
+        return filtrarCorreos(correosRecibidos, criterio);
     }
 
     public List<Correo> filtrarEnviados(Predicate<Correo> criterio) {
-        return correosEnviados.stream()
+        return filtrarCorreos(correosEnviados, criterio);
+    }
+
+    // Método genérico para filtrar correos
+    private List<Correo> filtrarCorreos(List<Correo> correos, Predicate<Correo> criterio) {
+        return correos.stream()
                 .filter(criterio)
                 .collect(Collectors.toList());
     }
 
-    // Método para borrar correos
+    // Métodos para borrar correos
     public void borrarCorreoRecibido(Correo correo) {
         correosRecibidos.remove(correo);
     }
