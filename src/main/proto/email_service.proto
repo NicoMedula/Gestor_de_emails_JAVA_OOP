@@ -15,9 +15,10 @@ service EmailService {
 // Definición de los mensajes
 message EmailRequest {
   string from = 1;
-  string to = 2;
-  string subject = 3;
-  string body = 4;
+  string subject = 2;
+  string body = 3;
+  repeated string to = 4;
+  
   
 }
 

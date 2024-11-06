@@ -21,9 +21,10 @@ private static final long serialVersionUID = 0L;
   }
   private EmailRequest() {
     from_ = "";
-    to_ = "";
     subject_ = "";
     body_ = "";
+    to_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -85,50 +86,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TO_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object to_ = "";
-  /**
-   * <code>string to = 2;</code>
-   * @return The to.
-   */
-  @java.lang.Override
-  public java.lang.String getTo() {
-    java.lang.Object ref = to_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      to_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string to = 2;</code>
-   * @return The bytes for to.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getToBytes() {
-    java.lang.Object ref = to_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      to_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int SUBJECT_FIELD_NUMBER = 3;
+  public static final int SUBJECT_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
   private volatile java.lang.Object subject_ = "";
   /**
-   * <code>string subject = 3;</code>
+   * <code>string subject = 2;</code>
    * @return The subject.
    */
   @java.lang.Override
@@ -145,7 +107,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string subject = 3;</code>
+   * <code>string subject = 2;</code>
    * @return The bytes for subject.
    */
   @java.lang.Override
@@ -163,11 +125,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int BODY_FIELD_NUMBER = 4;
+  public static final int BODY_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object body_ = "";
   /**
-   * <code>string body = 4;</code>
+   * <code>string body = 3;</code>
    * @return The body.
    */
   @java.lang.Override
@@ -184,7 +146,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string body = 4;</code>
+   * <code>string body = 3;</code>
    * @return The bytes for body.
    */
   @java.lang.Override
@@ -200,6 +162,43 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int TO_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList to_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string to = 4;</code>
+   * @return A list containing the to.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getToList() {
+    return to_;
+  }
+  /**
+   * <code>repeated string to = 4;</code>
+   * @return The count of to.
+   */
+  public int getToCount() {
+    return to_.size();
+  }
+  /**
+   * <code>repeated string to = 4;</code>
+   * @param index The index of the element to return.
+   * @return The to at the given index.
+   */
+  public java.lang.String getTo(int index) {
+    return to_.get(index);
+  }
+  /**
+   * <code>repeated string to = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the to at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getToBytes(int index) {
+    return to_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -219,14 +218,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(from_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, from_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, to_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, subject_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subject_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(body_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, body_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, body_);
+    }
+    for (int i = 0; i < to_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, to_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -240,14 +239,19 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(from_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, from_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(to_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, to_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subject_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subject_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subject_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(body_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, body_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, body_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < to_.size(); i++) {
+        dataSize += computeStringSizeNoTag(to_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getToList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -266,12 +270,12 @@ private static final long serialVersionUID = 0L;
 
     if (!getFrom()
         .equals(other.getFrom())) return false;
-    if (!getTo()
-        .equals(other.getTo())) return false;
     if (!getSubject()
         .equals(other.getSubject())) return false;
     if (!getBody()
         .equals(other.getBody())) return false;
+    if (!getToList()
+        .equals(other.getToList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -285,12 +289,14 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + FROM_FIELD_NUMBER;
     hash = (53 * hash) + getFrom().hashCode();
-    hash = (37 * hash) + TO_FIELD_NUMBER;
-    hash = (53 * hash) + getTo().hashCode();
     hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
     hash = (53 * hash) + getSubject().hashCode();
     hash = (37 * hash) + BODY_FIELD_NUMBER;
     hash = (53 * hash) + getBody().hashCode();
+    if (getToCount() > 0) {
+      hash = (37 * hash) + TO_FIELD_NUMBER;
+      hash = (53 * hash) + getToList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -427,9 +433,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       from_ = "";
-      to_ = "";
       subject_ = "";
       body_ = "";
+      to_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -467,13 +474,14 @@ private static final long serialVersionUID = 0L;
         result.from_ = from_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.to_ = to_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.subject_ = subject_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.body_ = body_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        to_.makeImmutable();
+        result.to_ = to_;
       }
     }
 
@@ -526,19 +534,24 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getTo().isEmpty()) {
-        to_ = other.to_;
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
       if (!other.getSubject().isEmpty()) {
         subject_ = other.subject_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (!other.getBody().isEmpty()) {
         body_ = other.body_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.to_.isEmpty()) {
+        if (to_.isEmpty()) {
+          to_ = other.to_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureToIsMutable();
+          to_.addAll(other.to_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -573,18 +586,19 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 10
             case 18: {
-              to_ = input.readStringRequireUtf8();
+              subject_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
-              subject_ = input.readStringRequireUtf8();
+              body_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              body_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000008;
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureToIsMutable();
+              to_.add(s);
               break;
             } // case 34
             default: {
@@ -676,81 +690,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object to_ = "";
-    /**
-     * <code>string to = 2;</code>
-     * @return The to.
-     */
-    public java.lang.String getTo() {
-      java.lang.Object ref = to_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        to_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string to = 2;</code>
-     * @return The bytes for to.
-     */
-    public com.google.protobuf.ByteString
-        getToBytes() {
-      java.lang.Object ref = to_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        to_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string to = 2;</code>
-     * @param value The to to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTo(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      to_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string to = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTo() {
-      to_ = getDefaultInstance().getTo();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string to = 2;</code>
-     * @param value The bytes for to to set.
-     * @return This builder for chaining.
-     */
-    public Builder setToBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      to_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object subject_ = "";
     /**
-     * <code>string subject = 3;</code>
+     * <code>string subject = 2;</code>
      * @return The subject.
      */
     public java.lang.String getSubject() {
@@ -766,7 +708,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string subject = 3;</code>
+     * <code>string subject = 2;</code>
      * @return The bytes for subject.
      */
     public com.google.protobuf.ByteString
@@ -783,7 +725,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string subject = 3;</code>
+     * <code>string subject = 2;</code>
      * @param value The subject to set.
      * @return This builder for chaining.
      */
@@ -791,22 +733,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       subject_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>string subject = 3;</code>
+     * <code>string subject = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearSubject() {
       subject_ = getDefaultInstance().getSubject();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
     /**
-     * <code>string subject = 3;</code>
+     * <code>string subject = 2;</code>
      * @param value The bytes for subject to set.
      * @return This builder for chaining.
      */
@@ -815,14 +757,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       subject_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
 
     private java.lang.Object body_ = "";
     /**
-     * <code>string body = 4;</code>
+     * <code>string body = 3;</code>
      * @return The body.
      */
     public java.lang.String getBody() {
@@ -838,7 +780,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string body = 4;</code>
+     * <code>string body = 3;</code>
      * @return The bytes for body.
      */
     public com.google.protobuf.ByteString
@@ -855,7 +797,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string body = 4;</code>
+     * <code>string body = 3;</code>
      * @param value The body to set.
      * @return This builder for chaining.
      */
@@ -863,22 +805,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       body_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string body = 4;</code>
+     * <code>string body = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearBody() {
       body_ = getDefaultInstance().getBody();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string body = 4;</code>
+     * <code>string body = 3;</code>
      * @param value The bytes for body to set.
      * @return This builder for chaining.
      */
@@ -887,6 +829,117 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       body_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList to_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureToIsMutable() {
+      if (!to_.isModifiable()) {
+        to_ = new com.google.protobuf.LazyStringArrayList(to_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+    /**
+     * <code>repeated string to = 4;</code>
+     * @return A list containing the to.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getToList() {
+      to_.makeImmutable();
+      return to_;
+    }
+    /**
+     * <code>repeated string to = 4;</code>
+     * @return The count of to.
+     */
+    public int getToCount() {
+      return to_.size();
+    }
+    /**
+     * <code>repeated string to = 4;</code>
+     * @param index The index of the element to return.
+     * @return The to at the given index.
+     */
+    public java.lang.String getTo(int index) {
+      return to_.get(index);
+    }
+    /**
+     * <code>repeated string to = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the to at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getToBytes(int index) {
+      return to_.getByteString(index);
+    }
+    /**
+     * <code>repeated string to = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The to to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTo(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureToIsMutable();
+      to_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string to = 4;</code>
+     * @param value The to to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTo(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureToIsMutable();
+      to_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string to = 4;</code>
+     * @param values The to to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTo(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureToIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, to_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string to = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTo() {
+      to_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string to = 4;</code>
+     * @param value The bytes of the to to add.
+     * @return This builder for chaining.
+     */
+    public Builder addToBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureToIsMutable();
+      to_.add(value);
       bitField0_ |= 0x00000008;
       onChanged();
       return this;

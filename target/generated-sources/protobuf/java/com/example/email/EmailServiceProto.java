@@ -39,8 +39,8 @@ public final class EmailServiceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023email_service.proto\022\005email\"G\n\014EmailReq" +
-      "uest\022\014\n\004from\030\001 \001(\t\022\n\n\002to\030\002 \001(\t\022\017\n\007subjec" +
-      "t\030\003 \001(\t\022\014\n\004body\030\004 \001(\t\"^\n\rEmailResponse\022\017" +
+      "uest\022\014\n\004from\030\001 \001(\t\022\017\n\007subject\030\002 \001(\t\022\014\n\004b" +
+      "ody\030\003 \001(\t\022\n\n\002to\030\004 \003(\t\"^\n\rEmailResponse\022\017" +
       "\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\014\n\004from" +
       "\030\003 \001(\t\022\017\n\007subject\030\004 \001(\t\022\014\n\004body\030\005 \001(\t\" \n" +
       "\020GetEmailsRequest\022\014\n\004user\030\001 \001(\t2\204\001\n\014Emai" +
@@ -59,7 +59,7 @@ public final class EmailServiceProto {
     internal_static_email_EmailRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_email_EmailRequest_descriptor,
-        new java.lang.String[] { "From", "To", "Subject", "Body", });
+        new java.lang.String[] { "From", "Subject", "Body", "To", });
     internal_static_email_EmailResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_email_EmailResponse_fieldAccessorTable = new

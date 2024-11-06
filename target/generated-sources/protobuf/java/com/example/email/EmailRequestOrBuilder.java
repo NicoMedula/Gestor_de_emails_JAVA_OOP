@@ -20,38 +20,51 @@ public interface EmailRequestOrBuilder extends
       getFromBytes();
 
   /**
-   * <code>string to = 2;</code>
-   * @return The to.
-   */
-  java.lang.String getTo();
-  /**
-   * <code>string to = 2;</code>
-   * @return The bytes for to.
-   */
-  com.google.protobuf.ByteString
-      getToBytes();
-
-  /**
-   * <code>string subject = 3;</code>
+   * <code>string subject = 2;</code>
    * @return The subject.
    */
   java.lang.String getSubject();
   /**
-   * <code>string subject = 3;</code>
+   * <code>string subject = 2;</code>
    * @return The bytes for subject.
    */
   com.google.protobuf.ByteString
       getSubjectBytes();
 
   /**
-   * <code>string body = 4;</code>
+   * <code>string body = 3;</code>
    * @return The body.
    */
   java.lang.String getBody();
   /**
-   * <code>string body = 4;</code>
+   * <code>string body = 3;</code>
    * @return The bytes for body.
    */
   com.google.protobuf.ByteString
       getBodyBytes();
+
+  /**
+   * <code>repeated string to = 4;</code>
+   * @return A list containing the to.
+   */
+  java.util.List<java.lang.String>
+      getToList();
+  /**
+   * <code>repeated string to = 4;</code>
+   * @return The count of to.
+   */
+  int getToCount();
+  /**
+   * <code>repeated string to = 4;</code>
+   * @param index The index of the element to return.
+   * @return The to at the given index.
+   */
+  java.lang.String getTo(int index);
+  /**
+   * <code>repeated string to = 4;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the to at the given index.
+   */
+  com.google.protobuf.ByteString
+      getToBytes(int index);
 }

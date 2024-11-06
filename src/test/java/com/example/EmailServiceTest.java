@@ -62,7 +62,7 @@ class EmailServiceTest {
         EmailRequest request = EmailRequest.newBuilder()
                 .setSubject(correo.getAsunto()) // Método para obtener el asunto
                 .setBody(correo.getContenido())   // Método para obtener el contenido
-                .setTo(correo.getDestinatarios().get(0).getEmail()) // Método para obtener el email del destinatario
+                
                 .setFrom(correo.getRemitente().getEmail()) // Método para obtener el email del remitente
                 .build();
 
