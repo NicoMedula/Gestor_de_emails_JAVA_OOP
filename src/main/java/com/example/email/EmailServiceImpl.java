@@ -31,6 +31,7 @@ public void sendEmail(EmailRequest request, StreamObserver<EmailResponse> respon
     correo.setAsunto(request.getSubject());
     correo.setContenido(request.getBody());
     correo.setRemitente(remitente);
+    
 
     // Itera sobre la lista de destinatarios y envía el correo a cada uno
     for (String destinatarioEmail : request.getToList()) {

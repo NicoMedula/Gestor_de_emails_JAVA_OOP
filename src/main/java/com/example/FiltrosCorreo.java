@@ -2,45 +2,46 @@ package com.example;
 
 import java.util.function.Predicate;
 
-public class Filtros {
+public class FiltrosCorreo implements IFiltroCorreo {
 
-    // Filtrar por asunto
+    @Override
     public Predicate<Correo> filtrarPorAsunto(String keyword) {
         return correo -> correo.getAsunto().contains(keyword);
     }
 
-    // Filtrar por remitente
+    @Override
     public Predicate<Correo> filtrarPorRemitente(String email) {
         return correo -> correo.getRemitente().getEmail().equals(email);
     }
 
-    // Filtrar por contenido
+    @Override
     public Predicate<Correo> filtrarPorContenido(String keyword) {
         return correo -> correo.getContenido().contains(keyword);
     }
 
-    // Filtrar por destinatario
+    @Override
     public Predicate<Correo> filtrarPorDestinatario(String email) {
         return correo -> correo.getDestinatarios().stream()
                 .anyMatch(destinatario -> destinatario.getEmail().equals(email));
     }
 
-    // Filtro complejo: se combinan dos campos en la búsqueda "&&" (asunto y remitente)
+    @Override
     public Predicate<Correo> filtrarPorAsuntoYRemitente(String keyword, String remitenteEmail) {
-        return correo -> correo.getAsunto().contains(keyword) && 
-                        correo.getRemitente().getEmail().equals(remitenteEmail);
+        return correo -> correo.getAsunto().contains(keyword) &&
+                correo.getRemitente().getEmail().equals(remitenteEmail);
     }
 
-    // Filtro complejo: Filtrar por asunto, remitente y contenido
+    @Override
     public Predicate<Correo> filtrarPorAsuntoRemitenteYContenido(String keywordAsunto, String remitenteEmail, String keywordContenido) {
         return correo -> correo.getAsunto().contains(keywordAsunto) &&
-                        correo.getRemitente().getEmail().equals(remitenteEmail) &&
-                        correo.getContenido().contains(keywordContenido);
+                correo.getRemitente().getEmail().equals(remitenteEmail) &&
+                correo.getContenido().contains(keywordContenido);
     }
 
-    // Filtro complejo: Filtrar por asunto y destinatario
+    @Override
     public Predicate<Correo> filtrarPorAsuntoYDestinatario(String keywordAsunto, String destinatarioEmail) {
         return correo -> correo.getAsunto().contains(keywordAsunto) &&
-                        correo.getDestinatarios().stream().anyMatch(destinatario -> destinatario.getEmail().equals(destinatarioEmail));
+                correo.getDestinatarios().stream()
+                        .anyMatch(destinatario -> destinatario.getEmail().equals(destinatarioEmail));
     }
 }

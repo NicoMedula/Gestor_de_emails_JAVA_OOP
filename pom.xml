@@ -62,12 +62,7 @@
         <artifactId>grpc-stub</artifactId>
         <version>${grpc.version}</version> <!-- Usar la propiedad grpc.version -->
     </dependency>
-    <dependency>
-        <groupId>com.google.protobuf</groupId>
-        <artifactId>protobuf-java</artifactId>
-        <version>${protobuf.version}</version> <!-- Usar la propiedad protobuf.version -->
-    </dependency>
-
+    
 
     <dependency>
         <groupId>javax.annotation</groupId>
@@ -188,6 +183,7 @@
         <executions>
         
           <execution>
+        
             <goals>
               <goal>compile</goal>
               <goal>compile-custom</goal>

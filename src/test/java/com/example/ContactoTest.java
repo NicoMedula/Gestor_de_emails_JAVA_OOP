@@ -384,7 +384,7 @@ public void testEnvioDeCorreo() {
     public void filtrar_por_asunto_bandeja_de_entrada_Test() {
     
         
-        Filtros filtro = new Filtros(); // Crear una instancia de Filtros
+        FiltrosCorreo filtro = new FiltrosCorreo();
         Contacto remitente1 = new Contacto("Nico","remitente@example.com");
         Contacto destinatario = new Contacto("Nico","destinatario1@example.com");
     
@@ -412,7 +412,7 @@ public void testEnvioDeCorreo() {
     @Test
 public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
-    Filtros filtro = new Filtros(); // Crear una instancia de Filtros
+    FiltrosCorreo filtro = new FiltrosCorreo();
     Contacto remitente1 = new Contacto("Nico","remitente@example.com");
     Contacto destinatario = new Contacto("Nico","destinatario1@example.com");
 
@@ -438,7 +438,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
     @Test
     public void filtrar_por_remitente_bandeja_de_entrada_Test() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
         Contacto destinatario = new Contacto("Nico","destinatario1@example.com");
     
         Contacto remitente1 = new Contacto("Nicolas", "nicolas@hotmail.com");
@@ -463,7 +463,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
     @Test
     public void filtrar_por_contenido_bandeja_de_entrada_Test() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
 
         Contacto remitente1 = new Contacto("Nico","remitente@example.com");
         Contacto destinatario = new Contacto("Nico","destinatario1@example.com");
@@ -501,7 +501,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
     @Test
     public void filtro_complejo_asunto_y_remitente_bandeja_de_entrada_Test() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
 
         // Crear remitente
         Contacto remitente1 = new Contacto("remi1","remitente1@ejemplo.com");
@@ -533,7 +533,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
     @Test
     public void filtro_complejo_asunto_y_remitente_bandeja_de_entrada_fallido_Test() {
 
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
         
         // Crear remitente
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
@@ -562,7 +562,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
     @Test
     public void filtro_complejo_asunto_remitente_y_contenido_bandeja_de_entrada_Test() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
     
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
         Contacto remitente2 = new Contacto("desti1", "remitente2@ejemplo.com");
@@ -598,7 +598,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
     
     @Test
     public void filtro_complejo_asunto_remitente_y_contenido_fallido_bandeja_de_entrada_Test() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
     
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
     
@@ -618,7 +618,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
     @Test
     public void filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_Test() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
     
         Contacto destinatario1 = new Contacto("desti1", "destinatario1@ejemplo.com");
         Contacto destinatario2 = new Contacto("desti2", "destinatario2@ejemplo.com");
@@ -653,8 +653,8 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
     public void filtro_complejo_asunto_y_destinatario_bandeja_de_entrada_fallido_Test() {
         
        
-        Filtros filtro = new Filtros();
-        
+    FiltrosCorreo filtro = new FiltrosCorreo();
+
         Contacto destinatario1 = new Contacto("desti1", "destinatario1@ejemplo.com");
         Contacto remitente1 = new Contacto("remitente1", "remitente@ejemplo.com");
         
@@ -677,7 +677,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
     @Test
     public void filtro_asunto_bandeja_salida_Test() {
 
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
     
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
         Contacto destinatario = new Contacto("destinatario", "destinatario@gmail.com");
@@ -704,7 +704,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
     @Test
     public void filtro_asunto_bandeja_salida_fallido_Test() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
         
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
         Contacto destinatario = new Contacto("destinatario", "destinatario@gmail.com");
@@ -726,7 +726,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
     
     @Test
     public void filtro_por_destinatario_bandeja_salida_Test() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
     
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
         Contacto destinatario1 = new Contacto("destinatario1", "destinatario1@gmail.com");
@@ -759,7 +759,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
     @Test
     public void filtro_por_contenido_bandeja_salida_Test() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
 
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
         Contacto destinatario1 = new Contacto("destinatario1", "destinatario1@gmail.com");
@@ -788,7 +788,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
 
     @Test
     public void filtro_por_contenido_bandeja_salida_Test_Fallido() {
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
 
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
         Contacto destinatario1 = new Contacto("destinatario1", "destinatario1@gmail.com");
@@ -817,7 +817,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
     @Test
     public void borrar_correo_bandeja_de_salida_Test() {
        
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
 
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
         Contacto destinatario1 = new Contacto("destinatario1", "destinatario1@gmail.com");
@@ -848,7 +848,7 @@ public void filtrar_por_asunto_bandeja_de_entrada_Test_Fallido() {
     @Test
     public void borrar_correo_bandeja_de_entrada_Test() {
        
-        Filtros filtro = new Filtros();
+        FiltrosCorreo filtro = new FiltrosCorreo();
 
         Contacto remitente1 = new Contacto("remi1", "remitente1@ejemplo.com");
 

@@ -1,3 +1,4 @@
+com/.DS_Store
 com/example/email/EmailServiceGrpc$3.class
 com/example/email/EmailServiceGrpc$EmailServiceFileDescriptorSupplier.class
 com/example/email/EmailServiceGrpc$MethodHandlers.class
@@ -6,6 +7,7 @@ com/example/Bandeja.class
 com/example/Contacto.class
 com/example/email/EmailServiceGrpc$1.class
 com/example/GrupoContactos.class
+.DS_Store
 com/example/email/EmailServiceGrpc.class
 com/example/Correo.class
 com/example/email/EmailServiceGrpc$EmailServiceImplBase.class
@@ -13,6 +15,7 @@ com/example/email/EmailServiceGrpc$AsyncService.class
 com/example/Casilla.class
 com/example/email/EmailServiceGrpc$EmailServiceBlockingStub.class
 com/example/email/EmailServiceGrpc$EmailServiceStub.class
+com/example/.DS_Store
 com/example/email/EmailServiceGrpc$EmailServiceMethodDescriptorSupplier.class
 com/example/email/EmailServiceGrpc$EmailServiceFutureStub.class
 com/example/email/EmailServer.class

@@ -3,6 +3,8 @@ package com.example.email;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
+//mvn exec:java -Dexec.mainClass="com.example.email.EmailClient"
+
 public class EmailClient {
     public static void main(String[] args) {
         // Crear el canal y el stub

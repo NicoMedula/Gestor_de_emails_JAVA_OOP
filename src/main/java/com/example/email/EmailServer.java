@@ -17,4 +17,4 @@ public class EmailServer {
 
         server.awaitTermination();
     }
-}
+}//mvn exec:java -Dexec.mainClass="com.example.email.EmailServer"
