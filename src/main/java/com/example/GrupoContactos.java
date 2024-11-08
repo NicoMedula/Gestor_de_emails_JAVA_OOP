@@ -3,7 +3,7 @@ package com.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GrupoContactos {
+public class GrupoContactos implements IDestinatario {
     private String nombre;
     private List<Contacto> miembros;
     private Contacto propietario;
@@ -24,6 +24,7 @@ public class GrupoContactos {
         miembros.remove(contacto);
     }
 
+    @Override
     public List<Contacto> getMiembros() {
         return new ArrayList<>(miembros);
     }
@@ -35,5 +36,4 @@ public class GrupoContactos {
     public Contacto getPropietario() {
         return propietario;
     }
-
 }
