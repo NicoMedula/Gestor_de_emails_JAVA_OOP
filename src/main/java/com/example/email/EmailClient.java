@@ -8,7 +8,7 @@ import io.grpc.ManagedChannelBuilder;
 public class EmailClient {
     public static void main(String[] args) {
         // Crear el canal y el stub
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("10.211.55.4", 50051)
             .usePlaintext()
             .build();
         EmailServiceGrpc.EmailServiceBlockingStub stub = EmailServiceGrpc.newBlockingStub(channel);

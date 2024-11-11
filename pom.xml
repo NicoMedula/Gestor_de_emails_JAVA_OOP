@@ -85,7 +85,6 @@
         <scope>test</scope>
     </dependency>
   </dependencies>
-
   <build>
     <extensions>
       <extension>
@@ -168,7 +167,6 @@
           </execution>
         </executions>
       </plugin>
-
       <!-- Protobuf plugin for gRPC -->
       <plugin>
         <groupId>org.xolstice.maven.plugins</groupId>
@@ -183,7 +181,7 @@
         <executions>
         
           <execution>
-        
+      
             <goals>
               <goal>compile</goal>
               <goal>compile-custom</goal>
