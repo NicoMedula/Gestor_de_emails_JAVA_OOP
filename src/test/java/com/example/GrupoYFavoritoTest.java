@@ -51,7 +51,7 @@ public class GrupoYFavoritoTest {
 
         remitente.enviarCorreo(correo1);
 
-        remitente.agregarAFavoritos(correo1);
+        remitente.verificarYAgergarFavorito(correo1);
 
         assertEquals(1, remitente.getBandeja().getCorreosFavoritos().size());
         assertEquals("Correo 1", remitente.getBandeja().getCorreosFavoritos().get(0).getAsunto());

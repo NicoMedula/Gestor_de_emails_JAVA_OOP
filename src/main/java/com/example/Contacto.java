@@ -35,7 +35,7 @@ public class Contacto extends EntidadCorreo {
         return new ArrayList<>(grupos);
     }
 
-    public void agregarAFavoritos(Correo correo) {
+    public void verificarYAgergarFavorito(Correo correo) {
         // Verificar si el usuario es remitente o destinatario del correo
         if (correo.getRemitente().equals(this) || correo.getDestinatarios().contains(this)) {
             casilla.getBandeja().agregarAFavoritos(correo);
